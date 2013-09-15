@@ -11,7 +11,7 @@
 <script src="js/vendor/handlebars.js"></script>
 <script src="js/app/universal.js"></script>
 <script src="js/app/scheduling/general.js"></script>
-<script src="js/app/scheduling/month.js"></script>
+<script src="js/app/scheduling/week.js"></script>
 </head>
 
 <body>
@@ -235,7 +235,7 @@
             <div class="event text-center"></div>
           </td>
           <td>
-            <div class="event text-center active" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-content='<div class="schedule-detail"><ul><li><label>开始时间</label><div class="row"><div class="col-md-6"><select><option>2013-08-15</option></select></div><div class="col-md-6"><select><option>12:00</option></select></div></div></li><li><label>结束时间</label><div class="row"><div class="col-md-6"><select><option>2013-08-15</option></select></div><div class="col-md-6"><select><option>1:00</option></select></div></div></li><li><label>重复</label><div class="row"><div class="col-md-6"><select><option>无</option></select></div></div></li><li><label>值班护士</label><div class="row"><div class="col-md-9"><input type="text" maxlength="255" value="添加值班护士" disabled></div><div class="col-md-3"><button type="button" data-toggle="modal" href="#add-nurses" class="btn btn-default">添加...</button></div></div></li></ul><div class="row"><div class="col-md-3"><button type="button" class="btn btn-default">删除</button></div><div class="col-md-3"></div><div class="col-md-3"><button type="button" class="btn btn-green">确定</button></div><div class="col-md-3"><button type="button" class="btn btn-default popover-close">取消</button></div></div></div>'>Elle, Ellen</div>
+            <div class="event text-center active" data-placement="right" data-html="true" data-trigger="manual">Elle, Ellen</div>
           </td>
           <td>
             <div class="event text-center"></div>
@@ -261,7 +261,7 @@
             <div class="event text-center"></div>
           </td>
           <td>
-            <div class="event text-center" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-content='<div class="schedule-detail"><ul><li><label>开始时间</label><div class="row"><div class="col-md-6"><select><option>2013-08-15</option></select></div><div class="col-md-6"><select><option>12:00</option></select></div></div></li><li><label>结束时间</label><div class="row"><div class="col-md-6"><select><option>2013-08-15</option></select></div><div class="col-md-6"><select><option>1:00</option></select></div></div></li><li><label>重复</label><div class="row"><div class="col-md-6"><select><option>无</option></select></div></div></li><li><label>值班护士</label><div class="row"><div class="col-md-9"><input type="text" maxlength="255" value="添加值班护士" disabled></div><div class="col-md-3"><button type="button" data-toggle="modal" href="#add-nurses" class="btn btn-default">添加...</button></div></div></li></ul><div class="row"><div class="col-md-3"><button type="button" class="btn btn-default">删除</button></div><div class="col-md-3"></div><div class="col-md-3"><button type="button" class="btn btn-green">确定</button></div><div class="col-md-3"><button type="button" class="btn btn-default popover-close">取消</button></div></div></div>'>Elle, Ellen</div>
+            <div class="event text-center" data-placement="right" data-html="true" data-trigger="manual">Elle, Ellen</div>
           </td>
           <td>
             <div class="event text-center"></div>
@@ -287,7 +287,7 @@
             <div class="event text-center"></div>
           </td>
           <td>
-            <div class="event text-center" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-content='<div class="schedule-detail"><ul><li><label>开始时间</label><div class="row"><div class="col-md-6"><select><option>2013-08-15</option></select></div><div class="col-md-6"><select><option>12:00</option></select></div></div></li><li><label>结束时间</label><div class="row"><div class="col-md-6"><select><option>2013-08-15</option></select></div><div class="col-md-6"><select><option>1:00</option></select></div></div></li><li><label>重复</label><div class="row"><div class="col-md-6"><select><option>无</option></select></div></div></li><li><label>值班护士</label><div class="row"><div class="col-md-9"><input type="text" maxlength="255" value="添加值班护士" disabled></div><div class="col-md-3"><button type="button" data-toggle="modal" href="#add-nurses" class="btn btn-default">添加...</button></div></div></li></ul><div class="row"><div class="col-md-3"><button type="button" class="btn btn-default">删除</button></div><div class="col-md-3"></div><div class="col-md-3"><button type="button" class="btn btn-green">确定</button></div><div class="col-md-3"><button type="button" class="btn btn-default popover-close">取消</button></div></div></div>'>Elle, Ellen</div>
+            <div class="event text-center" data-placement="right" data-html="true" data-trigger="manual">Elle, Ellen</div>
           </td>
           <td>
             <div class="event text-center"></div>
@@ -749,7 +749,7 @@
           </li>
         </ul>
         <div class="text-right">
-          <button type="button" class="btn btn-green">确定</button>
+          <button type="button" class="btn btn-green js-confirm-btn">确定</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
         </div>
       </div>
@@ -815,7 +815,7 @@
     <div class="row">
       {{#if edit}}
         <div class="col-md-3">
-          <button type="button" class="btn btn-default">删除</button>
+          <button type="button" class="btn btn-default js-delete-btn">删除</button>
         </div>
       {{/if}}
       <div class="col-md-{{#if edit}}3{{else}}6{{/if}}"></div>
