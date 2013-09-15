@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>护士排班-日 - NAS - 护士呼叫管理系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/nas.css">
+<script src="js/vendor/jquery-2.0.3.js"></script>
+<script src="js/vendor/bootstrap.js"></script>
+<script src="js/vendor/handlebars.js"></script>
+<script src="js/app/universal.js"></script>
+<script src="js/app/scheduling/general.js"></script>
+<script src="js/app/scheduling/month.js"></script>
+</head>
+
+<body>
+<div class="header">
+  <div class="logo">
+    <h1><a href="#"><i class="icon icon-2"></i><span class="title">护士排班</span></a><span class="seperator"><i></i></span><a href="#" class="caret js-show-nav"><i></i></a></h1>
+  </div>
+  <div class="user">
+    <a href="#"><span class="user-name">Admin</span><span class="user-avatar"><img src="img/default_avatar_s.png" alt=""></span></a>
+  </div>
+</div>
+<div class="base">
+  <div class="full-column">
+    <div class="column-header">
+      <div class="header-title"></div>
+      <div class="header-buttons">
+        <div class="btn-group">
+          <a href="#" class="btn active">日</a>
+          <a href="scheduling_week.html" class="btn">周</a>
+          <a href="scheduling_month.html" class="btn">月</a>
+        </div>
+        <button type="button" class="btn btn-green js-schedule-new-evt-btn" data-placement="bottom" data-html="true" data-trigger="manual">新建排班</button>
+      </div>
+    </div>
+    <div class="column-content column-content-left">
+      <div class="fill-content">
+        <table>
+          <tr>
+            <td valign="top">
+              <div class="day-details">
+                <div class="current-day">
+                  <h1>15</h1>
+                  <h3>2013年8月15日<br>星期四</h3>
+                </div>
+                <table class="calendar-day">
+                  <tr>
+                    <td>周日</td>
+                    <td>周一</td>
+                    <td>周二</td>
+                    <td>周三</td>
+                    <td>周四</td>
+                    <td>周五</td>
+                    <td>周六</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td><div class="day">1</div></td>
+                    <td><div class="day">2</div></td>
+                    <td><div class="day">3</div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="day">4</div></td>
+                    <td><div class="day">5</div></td>
+                    <td><div class="day">6</div></td>
+                    <td><div class="day">7</div></td>
+                    <td><div class="day">8</div></td>
+                    <td><div class="day">9</div></td>
+                    <td><div class="day">10</div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="day">11</div></td>
+                    <td><div class="day">12</div></td>
+                    <td><div class="day">13</div></td>
+                    <td><div class="day">14</div></td>
+                    <td><div class="day today">15</div></td>
+                    <td><div class="day">16</div></td>
+                    <td><div class="day">17</div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="day">18</div></td>
+                    <td><div class="day">19</div></td>
+                    <td><div class="day">20</div></td>
+                    <td><div class="day">21</div></td>
+                    <td><div class="day">22</div></td>
+                    <td><div class="day">23</div></td>
+                    <td><div class="day">24</div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="day">25</div></td>
+                    <td><div class="day">26</div></td>
+                    <td><div class="day">27</div></td>
+                    <td><div class="day">28</div></td>
+                    <td><div class="day">29</div></td>
+                    <td><div class="day">30</div></td>
+                    <td><div class="day">31</div></td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td valign="bottom" height="100%">
+              <div class="day-schedules">
+                <ul>
+                  <li>
+                    <span class="people">Elle, Ellen</span>
+                    <span class="time">06:00-12:00</span>
+                  </li>
+                  <li>
+                    <span class="people">Sophia, Apple</span>
+                    <span class="time">12:00-16:00</span>
+                  </li>
+                  <li>
+                    <span class="people">Andy, Lily</span>
+                    <span class="time">16:00-20:00</span>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="column-content column-content-right">
+      <div class="fill-content">
+        <table class="calendar days">
+          <tr>
+            <td>
+              <div class="time text-right">0:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">1:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">2:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">3:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">4:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">5:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">6:00</div>
+            </td>
+            <td>
+              <div class="event active" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content='<div class="schedule-detail"><ul><li><label>开始时间</label><div class="row"><div class="col-md-6"><select><option>2013-08-15</option></select></div><div class="col-md-6"><select><option>12:00</option></select></div></div></li><li><label>结束时间</label><div class="row"><div class="col-md-6"><select><option>2013-08-15</option></select></div><div class="col-md-6"><select><option>1:00</option></select></div></div></li><li><label>重复</label><div class="row"><div class="col-md-6"><select><option>无</option></select></div></div></li><li><label>值班护士</label><div class="row"><div class="col-md-9"><input type="text" maxlength="255" value="添加值班护士" disabled></div><div class="col-md-3"><button type="button" data-toggle="modal" href="#add-nurses" class="btn btn-default">添加...</button></div></div></li></ul><div class="row"><div class="col-md-3"><button type="button" class="btn btn-default">删除</button></div><div class="col-md-3"></div><div class="col-md-3"><button type="button" class="btn btn-green">确定</button></div><div class="col-md-3"><button type="button" class="btn btn-default popover-close">取消</button></div></div></div>'>Elle, Ellen</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">7:00</div>
+            </td>
+            <td>
+              <div class="event" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content='<div class="schedule-detail"><ul><li><label>开始时间</label><div class="row"><div class="col-md-6"><select><option>2013-08-15</option></select></div><div class="col-md-6"><select><option>12:00</option></select></div></div></li><li><label>结束时间</label><div class="row"><div class="col-md-6"><select><option>2013-08-15</option></select></div><div class="col-md-6"><select><option>1:00</option></select></div></div></li><li><label>重复</label><div class="row"><div class="col-md-6"><select><option>无</option></select></div></div></li><li><label>值班护士</label><div class="row"><div class="col-md-9"><input type="text" maxlength="255" value="添加值班护士" disabled></div><div class="col-md-3"><button type="button" data-toggle="modal" href="#add-nurses" class="btn btn-default">添加...</button></div></div></li></ul><div class="row"><div class="col-md-3"><button type="button" class="btn btn-default">删除</button></div><div class="col-md-3"></div><div class="col-md-3"><button type="button" class="btn btn-green">确定</button></div><div class="col-md-3"><button type="button" class="btn btn-default popover-close">取消</button></div></div></div>'>Elle, Ellen</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">8:00</div>
+            </td>
+            <td>
+              <div class="event" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content='<div class="schedule-detail"><ul><li><label>开始时间</label><div class="row"><div class="col-md-6"><select><option>2013-08-15</option></select></div><div class="col-md-6"><select><option>12:00</option></select></div></div></li><li><label>结束时间</label><div class="row"><div class="col-md-6"><select><option>2013-08-15</option></select></div><div class="col-md-6"><select><option>1:00</option></select></div></div></li><li><label>重复</label><div class="row"><div class="col-md-6"><select><option>无</option></select></div></div></li><li><label>值班护士</label><div class="row"><div class="col-md-9"><input type="text" maxlength="255" value="添加值班护士" disabled></div><div class="col-md-3"><button type="button" data-toggle="modal" href="#add-nurses" class="btn btn-default">添加...</button></div></div></li></ul><div class="row"><div class="col-md-3"><button type="button" class="btn btn-default">删除</button></div><div class="col-md-3"></div><div class="col-md-3"><button type="button" class="btn btn-green">确定</button></div><div class="col-md-3"><button type="button" class="btn btn-default popover-close">取消</button></div></div></div>'>Elle, Ellen</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">9:00</div>
+            </td>
+            <td>
+              <div class="event" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content='<div class="schedule-detail"><ul><li><label>开始时间</label><div class="row"><div class="col-md-6"><select><option>2013-08-15</option></select></div><div class="col-md-6"><select><option>12:00</option></select></div></div></li><li><label>结束时间</label><div class="row"><div class="col-md-6"><select><option>2013-08-15</option></select></div><div class="col-md-6"><select><option>1:00</option></select></div></div></li><li><label>重复</label><div class="row"><div class="col-md-6"><select><option>无</option></select></div></div></li><li><label>值班护士</label><div class="row"><div class="col-md-9"><input type="text" maxlength="255" value="添加值班护士" disabled></div><div class="col-md-3"><button type="button" data-toggle="modal" href="#add-nurses" class="btn btn-default">添加...</button></div></div></li></ul><div class="row"><div class="col-md-3"><button type="button" class="btn btn-default">删除</button></div><div class="col-md-3"></div><div class="col-md-3"><button type="button" class="btn btn-green">确定</button></div><div class="col-md-3"><button type="button" class="btn btn-default popover-close">取消</button></div></div></div>'>Elle, Ellen</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">10:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">11:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">12:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">13:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">14:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">15:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">16:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">17:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">18:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">19:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">20:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">21:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">22:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="time text-right">23:00</div>
+            </td>
+            <td>
+              <div class="event text-center"></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="column-footer text-center">
+      <div class="pagination days">
+        <a href="#" class="prev">&laquo;</a>
+        <span class="pages">
+          <a href="#">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+          <a href="#">10</a>
+          <a href="#">11</a>
+          <a href="#">12</a>
+          <a href="#">13</a>
+          <a href="#">14</a>
+          <a href="#" class="active">15</a>
+          <a href="#">16</a>
+          <a href="#">17</a>
+          <a href="#">18</a>
+          <a href="#">19</a>
+          <a href="#">20</a>
+          <a href="#">21</a>
+          <a href="#">22</a>
+          <a href="#">23</a>
+          <a href="#">24</a>
+          <a href="#">25</a>
+          <a href="#">26</a>
+          <a href="#">27</a>
+          <a href="#">28</a>
+          <a href="#">29</a>
+          <a href="#">30</a>
+          <a href="#">31</a>
+        </span>
+        <a href="#" class="next">&raquo;</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="copyright">&copy;2013 Televic</div>
+</div>
+
+<div class="modal fade" id="add-nurses" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <label>选择护士</label>
+        <ul>
+          <li>
+            <div class="row">
+              <div class="col-md-4">
+                <input name="" type="checkbox" value=""> Sophia
+              </div>
+              <div class="col-md-4">
+                <input name="" type="checkbox" value=""> Andy
+              </div>
+              <div class="col-md-4">
+                <input name="" type="checkbox" value=""> Elle
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="row">
+              <div class="col-md-4">
+                <input name="" type="checkbox" value=""> Apple
+              </div>
+              <div class="col-md-4">
+                <input name="" type="checkbox" value=""> Lily
+              </div>
+              <div class="col-md-4">
+                <input name="" type="checkbox" value=""> Ellen
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="text-right">
+          <button type="button" class="btn btn-green">确定</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="header-bar">
+  <ul>
+    <li><a href="#"><span class="icon icon-1"></span> <span>设备管理</span></a></li>
+    <li><a href="#"><span class="icon icon-2"></span> <span>护士排班</span></a></li>
+    <li><a href="#"><span class="icon icon-3"></span> <span>历史记录</span></a></li>
+    <li><a href="#"><span class="icon icon-4"></span> <span>人员管理</span></a></li>
+  </ul>
+  <div class="clearfix"></div>
+</div>
+
+<script id="event-detail-template" type="text/x-handlebars-template">
+  <div class="schedule-detail">
+    <ul>
+      <li>
+        <label>开始时间</label>
+        <div class="row">
+          <div class="col-md-6">
+            <select><option>2013-08-15</option></select>
+          </div>
+          <div class="col-md-6">
+            <select><option>12:00</option></select>
+          </div>
+        </div>
+      </li>
+      <li>
+        <label>结束时间</label>
+        <div class="row">
+          <div class="col-md-6">
+            <select><option>2013-08-15</option></select>
+          </div>
+          <div class="col-md-6">
+            <select><option>1:00</option></select>
+          </div>
+        </div>
+      </li>
+      <li>
+        <label>重复</label>
+        <div class="row">
+          <div class="col-md-6">
+            <select><option>无</option></select>
+          </div>
+        </div>
+      </li>
+      <li>
+        <label>值班护士</label>
+        <div class="row">
+          <div class="col-md-9">
+            <input name="nurses" type="text" maxlength="255" placeholder="添加值班护士" {{#if nurses}}value="{{ nurses }}" {{/if}}readonly>
+          </div>
+          <div class="col-md-3">
+            <button type="button" class="btn btn-default js-appoint-nurses">添加...</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="row">
+      {{#if edit}}
+        <div class="col-md-3">
+          <button type="button" class="btn btn-default">删除</button>
+        </div>
+      {{/if}}
+      <div class="col-md-{{#if edit}}3{{else}}6{{/if}}"></div>
+      <div class="col-md-3">
+        <button type="button" class="btn btn-green js-confirm-btn">确定</button>
+      </div>
+      <div class="col-md-3">
+        <button type="button" class="btn btn-default popover-close">取消</button>
+      </div>
+    </div>
+  </div>
+</script>
+
+<script id="month-event-entry-template" type="text/x-handlebars-template">
+  <li data-placement="right" data-html="true" data-trigger="manual">
+    <div class="people" title="{{ nurses }}">{{ nurses }}</div>
+    <div class="time">12:00-16:00</div>
+  </li>
+</script>
+</body>
+</html>
