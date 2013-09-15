@@ -39,7 +39,7 @@
           <a href="#" class="btn">周</a>
           <a href="#" class="btn active">月</a>
         </div>
-        <button type="button" class="btn btn-green js-schedule-new-evt-btn" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-trigger="manual">新建排班</button>
+        <button type="button" class="btn btn-green js-schedule-new-evt-btn" data-placement="bottom" data-html="true" data-trigger="manual">新建排班</button>
       </div>
     </div>
     <div class="column-content">
@@ -212,15 +212,15 @@
               </div>
               <div class="event">
                 <ul>
-                  <li class="active" data-container="body" data-placement="right" data-html="true">
+                  <li data-placement="right" data-html="true" data-trigger="manual">
                     <div class="people">Sophia, Apple, Andy, Lily</div>
                     <div class="time">12:00-16:00</div>
                   </li>
-                  <li data-container="body" data-placement="right" data-html="true">
+                  <li data-placement="right" data-html="true" data-trigger="manual">
                     <div class="people">Andy, Lily</div>
                     <div class="time">16:00-20:00</div>
                   </li>
-                  <li data-container="body" data-placement="right" data-html="true">
+                  <li data-placement="right" data-html="true" data-trigger="manual">
                     <div class="people">Elle, Ellen</div>
                     <div class="time">20:00-24:00</div>
                   </li>
@@ -228,7 +228,7 @@
               </div>
               <a href="#" class="more">更多</a>
             </td>
-            <td>
+            <td class="the-day">
               <div class="date">
                 <div class="row">
                   <div class="col-md-6"></div>
@@ -236,6 +236,7 @@
                 </div>
               </div>
               <div class="event"></div>
+              <a href="#" class="more">更多</a>
             </td>
             <td>
               <div class="date">
@@ -449,8 +450,8 @@
   <div class="clearfix"></div>
 </div>
 
-<script id="new-event-template" type="text/x-handlebars-template">
-  <div class="{{#if delete}}edit{{else}}new{{/if}}-schedule">
+<script id="event-detail-template" type="text/x-handlebars-template">
+  <div class="schedule-detail">
     <ul>
       <li>
         <label>开始时间</label>
@@ -486,7 +487,7 @@
         <label>值班护士</label>
         <div class="row">
           <div class="col-md-9">
-            <input name="nurses" type="text" maxlength="255" placeholder="添加值班护士" readonly>
+            <input name="nurses" type="text" maxlength="255" placeholder="添加值班护士" {{#if nurses}}value="{{ nurses }}" {{/if}}readonly>
           </div>
           <div class="col-md-3">
             <button type="button" class="btn btn-default js-appoint-nurses">添加...</button>
@@ -495,20 +496,27 @@
       </li>
     </ul>
     <div class="row">
-      {{#if delete}}
+      {{#if edit}}
         <div class="col-md-3">
           <button type="button" class="btn btn-default">删除</button>
         </div>
       {{/if}}
-      <div class="col-md-{{#if delete}}3{{else}}6{{/if}}"></div>
+      <div class="col-md-{{#if edit}}3{{else}}6{{/if}}"></div>
       <div class="col-md-3">
-        <button type="button" class="btn btn-green">确定</button>
+        <button type="button" class="btn btn-green js-confirm-btn">确定</button>
       </div>
       <div class="col-md-3">
         <button type="button" class="btn btn-default popover-close">取消</button>
       </div>
     </div>
   </div>
+</script>
+
+<script id="month-event-entry-template" type="text/x-handlebars-template">
+  <li data-placement="right" data-html="true" data-trigger="manual">
+    <div class="people" title="{{ nurses }}">{{ nurses }}</div>
+    <div class="time">12:00-16:00</div>
+  </li>
 </script>
 
 </body>

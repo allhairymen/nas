@@ -24,7 +24,8 @@
           if (parseInt($navBar.css('top'), 10) >= 0) {
             $navBar.css('top', NAS.universal.NAV_BAR_TOP_POS);
           }
-        }
+        },
+        evtNamespace: 'click.nas.navElse'
       });
     };
 
@@ -33,6 +34,7 @@
       // parse options
       var safeZones = options.safeZones,
           dismissFunc = options.dismissFunc,
+          evtNamespace = options.evtNamespace || 'click',
           once = options.once || false;
       safeZones = $.isArray(safeZones) ? safeZones : [safeZones];
 
@@ -50,13 +52,13 @@
           }
         }
         if (inSafeZone) {
-          if (once) $body[bindMethod]('click', handler);
+          if (once) $body[bindMethod](evtNamespace, handler);
         } else {
           dismissFunc(e);
         }
       }
 
-      $body[bindMethod]('click', handler);
+      $body[bindMethod](evtNamespace, handler);
     };
   }
 }(window.jQuery);
