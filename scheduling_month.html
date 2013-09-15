@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>护士排班-月 - NAS - 护士呼叫管理系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/nas.css">
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+!function ($) {
+  $(function(){
+    $("[data-toggle=popover]")
+	.popover('show')
+  })
+}(window.jQuery)
+</script>
+</head>
+
+<body>
+<div class="header">
+  <div class="logo">
+    <h1><a href="#"><i class="icon icon-2"></i><span class="title">护士排班</span></a><span class="seperator"><i></i></span><a href="#" class="caret"><i></i></a></h1>
+  </div>
+  <div class="user">
+    <a href="#"><span class="user-name">Admin</span><span class="user-avatar"><img src="img/default_avatar_s.png" alt=""></span></a>
+  </div>
+</div>
+<div class="base">
+  <div class="full-column">
+    <div class="column-header">
+      <div class="header-title">
+        <h2 class="set-title">2013年8月</h2>
+      </div>
+      <div class="header-buttons">
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn">
+          <input type="radio" name="options">日
+          </label>
+          <label class="btn">
+            <input type="radio" name="options">周
+          </label>
+          <label class="btn active">
+            <input type="radio" name="options">月
+          </label>
+        </div>
+        <button type="button" class="btn btn-green" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content='<div class="new-schedule"><ul><li><label>开始时间</label><div class="row"><div class="col-md-6"><select><option>2013-08-15</option></select></div><div class="col-md-6"><select><option>12:00</option></select></div></div></li><li><label>结束时间</label><div class="row"><div class="col-md-6"><select><option>2013-08-15</option></select></div><div class="col-md-6"><select><option>1:00</option></select></div></div></li><li><label>重复</label><div class="row"><div class="col-md-6"><select><option>无</option></select></div></div></li><li><label>值班护士</label><div class="row"><div class="col-md-9"><input type="text" maxlength="255" value="添加值班护士" disabled></div><div class="col-md-3"><button type="button" data-toggle="modal" href="#add-nurses" class="btn btn-default">添加...</button></div></div></li></ul><div class="row"><div class="col-md-3"><button type="button" class="btn btn-default">删除</button></div><div class="col-md-3"></div><div class="col-md-3"><button type="button" class="btn btn-green">确定</button></div><div class="col-md-3"><button type="button" class="btn btn-default popover-close">取消</button></div></div></div>'>新建排班</button>
+      </div>
+    </div>
+    <div class="column-content">
+      <div class="fill-content">
+      <table class="carlendar months">
+        <tr>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">周日 28日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">周一 29日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">周二 30日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">周三 31日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">周四 1日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">周五 2日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">周六 3日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">4日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">4日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">5日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">6日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">7日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">8日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">9日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">10日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">11日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">12日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">13日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">14日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">15日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">16日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">17日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">18日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">19日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">20日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">21日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">22日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">23日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">24日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">25日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">26日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">27日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">28日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">29日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+          <td>
+            <div class="date">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-right">30日</div>
+              </div>
+            </div>
+            <div class="event"></div>
+          </td>
+        </tr>
+      </table>
+      </div>
+    </div>
+    <div class="column-footer">
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="copyright">&copy2013 Televic</div>
+</div>
+
+<div class="modal fade" id="add-nurses" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <label>选择护士</label>
+        <ul>
+          <li>
+            <div class="row">
+              <div class="col-md-4">
+                <input name="" type="checkbox" value=""> Sophia
+              </div>
+              <div class="col-md-4">
+                <input name="" type="checkbox" value=""> Andy
+              </div>
+              <div class="col-md-4">
+                <input name="" type="checkbox" value=""> Elle
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="row">
+              <div class="col-md-4">
+                <input name="" type="checkbox" value=""> Apple
+              </div>
+              <div class="col-md-4">
+                <input name="" type="checkbox" value=""> Lily
+              </div>
+              <div class="col-md-4">
+                <input name="" type="checkbox" value=""> Ellen
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="text-right">
+          <button type="button" class="btn btn-green">确定</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="header-bar">
+  <ul>
+    <li><a href="#"><span class="icon icon-1"></span> <span>设备管理</span></a></li>
+    <li><a href="#"><span class="icon icon-2"></span> <span>护士排班</span></a></li>
+    <li><a href="#"><span class="icon icon-3"></span> <span>历史记录</span></a></li>
+    <li><a href="#"><span class="icon icon-4"></span> <span>人员管理</span></a></li>
+  </ul>
+  <div class="clearfix"></div>
+</div>
+</body>
+</html>
