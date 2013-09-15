@@ -17,6 +17,7 @@
         confirmHandler = options.confirmHandler;
 
     $newEvtBtn.on('click', function (e) {
+      e.stopPropagation();
       $newEvtBtn.popover({
         content: newEvtTemplate
       });
@@ -49,10 +50,24 @@
           });
           $modal.modal('show');
         });
-      $cancelNewEvtBtn.one('click', null, {newEvtDialog: $newEvtDialog},
-        cancelHandler);
-      $confirmNewEvtBtn.one('click', null, {newEvtDialog: $newEvtDialog},
-        confirmHandler);
+
+      $cancelNewEvtBtn.one('click', null, {
+        newEvtBtn: $newEvtBtn,
+        newEvtDialog: $newEvtDialog
+      }, cancelHandler);
+
+      $confirmNewEvtBtn.one('click', null, {
+        newEvtBtn: $newEvtBtn,
+        newEvtDialog: $newEvtDialog
+      }, confirmHandler);
+
+      NAS.utils.bindDismissOnClickElsewhere({
+        safeZones: ['.new-schedule', '#add-nurses'],
+        dismissFunc: function (e) {
+          $newEvtBtn.popover('hide');
+        },
+        once: true
+      });
     });
   };
 }(window.jQuery, window.Handlebars, window.NAS);

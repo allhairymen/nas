@@ -6,6 +6,8 @@
     NAS.scheduling = {};
     NAS.utils = {};
 
+    NAS.universal.NAV_BAR_TOP_POS = '-206px';
+
     NAS.universal.bindNavBar = function () {
       var $navBar = $('.header-bar'),
           $showNavBtn = $('.logo .js-show-nav');
@@ -17,10 +19,10 @@
       });
 
       NAS.utils.bindDismissOnClickElsewhere({
-        safeZone: $navBar,
+        safeZones: $navBar,
         dismissFunc: function (e) {
           if (parseInt($navBar.css('top'), 10) >= 0) {
-            $navBar.css('top', '-206px');
+            $navBar.css('top', NAS.universal.NAV_BAR_TOP_POS);
           }
         }
       });
@@ -29,18 +31,25 @@
     NAS.utils.bindDismissOnClickElsewhere = function (options) {
       options = options || {};
       // parse options
-      var safeZone = options.safeZone,
+      var safeZones = options.safeZones,
           dismissFunc = options.dismissFunc,
-          once = options.once || false,
+          once = options.once || false;
+      safeZones = $.isArray(safeZones) ? safeZones : [safeZones];
 
-          $body = $('body'),
+      var $body = $('body'),
           bindMethod = once ? 'one' : 'on';
 
       function handler (e) {
-        var $target = $(e.target);
-        if (safeZone &&
-           ($(safeZone)[0] === $target[0] ||
-            $(safeZone).find($target)[0])) {
+        var $target = $(e.target),
+            inSafeZone = false;
+        for (var i = safeZones.length - 1; i >= 0; i--) {
+          if (safeZones[i] &&
+             ($(safeZones[i])[0] === $target[0] ||
+              $(safeZones[i]).find($target)[0])) {
+            inSafeZone = true;
+          }
+        }
+        if (inSafeZone) {
           if (once) $body[bindMethod]('click', handler);
         } else {
           dismissFunc(e);
