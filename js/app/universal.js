@@ -45,14 +45,18 @@
         var $target = $(e.target),
             inSafeZone = false;
         for (var i = safeZones.length - 1; i >= 0; i--) {
-          if (safeZones[i] &&
-             ($(safeZones[i])[0] === $target[0] ||
-              $(safeZones[i]).find($target)[0])) {
+          var $safeZone = $(safeZones[i]);
+          if ($safeZone &&
+              ($safeZone[0] === $target[0] || $safeZone.find($target)[0])) {
             inSafeZone = true;
+            break;
           }
         }
         if (inSafeZone) {
-          if (once) $body[bindMethod](evtNamespace, handler);
+          if (once) {
+            $body.off(evtNamespace);
+            $body[bindMethod](evtNamespace, handler);
+          }
         } else {
           dismissFunc(e);
         }

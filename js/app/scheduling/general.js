@@ -19,14 +19,19 @@
             e.preventDefault();
             NAS.scheduling.closePopover(e.data.trigger);
           },
-        confirmHandler = options.confirmHandler;
+        confirmHandler = options.confirmHandler ||
+          function (e) {
+            e.preventDefault();
+            NAS.scheduling.closePopover(e.data.trigger);
+          };
 
     return function bindOnTrigger (e) {
       var $trigger = $(e.currentTarget);
       $trigger.popover({
         content: detailTemplate,
         container: 'body',
-        html: true
+        html: true,
+        trigger: 'manual'
       });
       $trigger.popover('toggle');
 
