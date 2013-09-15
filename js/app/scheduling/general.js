@@ -34,7 +34,8 @@
           $nursesAppointed = $detail.find('input[name="nurses"]'),
           $cancelDetailBtn = $detail.find('.popover-close'),
           $confirmDetailBtn = $detail.find('.js-confirm-btn'),
-          $appointNursesBtn = $detail.find('.js-appoint-nurses');
+          $appointNursesBtn = $detail.find('.js-appoint-nurses'),
+          $deleteEvtBtn = $detail.find('.js-delete-btn');
 
       $appointNursesBtn.on('click', function (e) {
         var $addNursesModal = $('#add-nurses'),
@@ -68,6 +69,13 @@
         trigger: $trigger,
         detail: $detail
       }, confirmHandler);
+
+      if ($deleteEvtBtn) {
+        $deleteEvtBtn.one('click', function (e) {
+          NAS.scheduling.closePopover($trigger);
+          $trigger.remove();
+        });
+      }
 
       NAS.utils.bindDismissOnClickElsewhere({
         safeZones: [$trigger, detailElem, '#add-nurses'],
