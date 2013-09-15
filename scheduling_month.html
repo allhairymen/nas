@@ -8,22 +8,20 @@
 <link rel="stylesheet" href="css/nas.css">
 <script src="js/vendor/jquery-2.0.3.js"></script>
 <script src="js/vendor/bootstrap.js"></script>
-<script src="js/vendor/require.js"></script>
-<script>
-!function ($) {
-  $(function(){
-    $("[data-toggle=popover]")
-	.popover('show')
-  })
-}(window.jQuery)
-</script>
-<script src="js/app/nas-universal.js"></script>
+<script src="js/vendor/handlebars.js"></script>
+<script src="js/app/universal.js"></script>
+<script src="js/app/scheduling/general.js"></script>
+<script src="js/app/scheduling/month.js"></script>
 </head>
 
 <body>
 <div class="header">
   <div class="logo">
-    <h1><a href="#"><i class="icon icon-2"></i><span class="title">护士排班</span></a><span class="seperator"><i></i></span><a href="#" class="caret"><i></i></a></h1>
+    <h1>
+      <a href="#"><i class="icon icon-2"></i><span class="title">护士排班</span></a>
+      <span class="seperator"><i></i></span>
+      <a href="#" class="caret js-show-nav"><i></i></a>
+    </h1>
   </div>
   <div class="user">
     <a href="#"><span class="user-name">Admin</span><span class="user-avatar"><img src="img/default_avatar_s.png" alt=""></span></a>
@@ -47,7 +45,7 @@
             <input type="radio" name="options">月
           </label>
         </div>
-        <button type="button" class="btn btn-green" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content='<div class="new-schedule"><ul><li><label>开始时间</label><div class="row"><div class="col-md-6"><select><option>2013-08-15</option></select></div><div class="col-md-6"><select><option>12:00</option></select></div></div></li><li><label>结束时间</label><div class="row"><div class="col-md-6"><select><option>2013-08-15</option></select></div><div class="col-md-6"><select><option>1:00</option></select></div></div></li><li><label>重复</label><div class="row"><div class="col-md-6"><select><option>无</option></select></div></div></li><li><label>值班护士</label><div class="row"><div class="col-md-9"><input type="text" maxlength="255" value="添加值班护士" disabled></div><div class="col-md-3"><button type="button" data-toggle="modal" href="#add-nurses" class="btn btn-default">添加...</button></div></div></li></ul><div class="row"><div class="col-md-3"><button type="button" class="btn btn-default">删除</button></div><div class="col-md-3"></div><div class="col-md-3"><button type="button" class="btn btn-green">确定</button></div><div class="col-md-3"><button type="button" class="btn btn-default popover-close">取消</button></div></div></div>'>新建排班</button>
+        <button type="button" class="btn btn-green js-schedule-new-evt-btn" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-trigger="manual">新建排班</button>
       </div>
     </div>
     <div class="column-content">
@@ -423,7 +421,7 @@
           </li>
         </ul>
         <div class="text-right">
-          <button type="button" class="btn btn-green">确定</button>
+          <button type="button" class="btn btn-green js-confirm-btn">确定</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
         </div>
       </div>
@@ -440,5 +438,68 @@
   </ul>
   <div class="clearfix"></div>
 </div>
+
+<script id="new-event-template" type="text/x-handlebars-template">
+  <div class="new-schedule">
+    <ul>
+      <li>
+        <label>开始时间</label>
+        <div class="row">
+          <div class="col-md-6">
+            <select><option>2013-08-15</option></select>
+          </div>
+          <div class="col-md-6">
+            <select><option>12:00</option></select>
+          </div>
+        </div>
+      </li>
+      <li>
+        <label>结束时间</label>
+        <div class="row">
+          <div class="col-md-6">
+            <select><option>2013-08-15</option></select>
+          </div>
+          <div class="col-md-6">
+            <select><option>1:00</option></select>
+          </div>
+        </div>
+      </li>
+      <li>
+        <label>重复</label>
+        <div class="row">
+          <div class="col-md-6">
+            <select><option>无</option></select>
+          </div>
+        </div>
+      </li>
+      <li>
+        <label>值班护士</label>
+        <div class="row">
+          <div class="col-md-9">
+            <input name="nurses" type="text" maxlength="255" placeholder="添加值班护士" readonly>
+          </div>
+          <div class="col-md-3">
+            <button type="button" class="btn btn-default js-appoint-nurses">添加...</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="row">
+      {{#if delete}}
+        <div class="col-md-3">
+          <button type="button" class="btn btn-default">删除</button>
+        </div>
+      {{/if}}
+      <div class="col-md-{{#if delete}}3{{else}}6{{/if}}"></div>
+      <div class="col-md-3">
+        <button type="button" class="btn btn-green">确定</button>
+      </div>
+      <div class="col-md-3">
+        <button type="button" class="btn btn-default popover-close">取消</button>
+      </div>
+    </div>
+  </div>
+</script>
+
 </body>
 </html>
