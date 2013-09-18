@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>参数设置 - NAS - 护士呼叫管理系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/nas.css">
+<script src="js/vendor/jquery-2.0.3.js"></script>
+<script src="js/vendor/bootstrap.js"></script>
+<script src="js/vendor/handlebars.js"></script>
+<script src="js/app/universal.js"></script>
+<script src="js/app/scheduling/general.js"></script>
+<script src="js/app/scheduling/day.js"></script>
+</head>
+
+<body>
+<div class="header">
+  <div class="logo">
+    <h1><a href="hosts.html"><i class="icon icon-1"></i><span class="title">设备配置</span></a><span class="seperator"><i></i></span><a href="#" class="caret js-show-nav"><i></i></a></h1>
+  </div>
+  <ul class="operation-nav">
+    <li><a href="#" onClick="alert('请至少选择一个设备')">删除</a></li>
+    <li><a href="floor_plan.html">楼层图</a></li>
+  </ul>
+  <div class="user">
+    <a href="#"><span class="user-name">Admin</span><span class="user-avatar"><img src="img/default_avatar_s.png" alt=""></span></a>
+  </div>
+</div>
+<div class="base">
+  <div class="full-column hosts-management">
+    <div class="column-header">
+      <div class="header-title">
+        <h2 class="set-title">外科</h2>
+        <div class="set-breadcrumb-bar">
+          <ul>
+            <li><a href="hosts.html">控制主机：1</a></li>
+            <li><span class="caret"><i></i></span>外科</li>
+            <li><span class="caret"><i></i></span>801 房</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="right-column-content">
+      <div class="fill-content">
+        <table>
+          <tr>
+            <td valign="top" height="100%">
+              <div class="right-column-content-main">
+                <div class="parameters-item">
+                  <h3>总线设备 <a class="btn btn-scan">扫描</a></h3>
+                  <ul>
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          <label><input type="checkbox" value="" class="checkbox"> 设备1</label>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8001床</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">外科</div>
+                        <div class="col-sm-3 col-md-3 text-right"><span class="del"><a href="#">删除</a></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          <label><input type="checkbox" value="" class="checkbox"> 设备2</label>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8002床</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">外科</div>
+                        <div class="col-sm-3 col-md-3 text-right"><span class="del"><a href="#">删除</a></span></div>
+                      </div>
+                      <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          <label><input type="checkbox" value="" class="checkbox"> 设备3</label>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8003床</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">外科</div>
+                        <div class="col-sm-3 col-md-3 text-right"><span class="del"><a href="#">删除</a></span></div>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>                
+                <div class="parameters-item">
+                  <h3>输入参数配置</h3>
+                  <ul>
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          输入1
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床801</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8001</option></select>
+                        </div>
+                        <div class="col-sm-3 col-md-3 text-right">
+                          <select><option>呼叫类型</option></select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          输入2
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床801</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8001</option></select>
+                        </div>
+                        <div class="col-sm-3 col-md-3 text-right">
+                          <select><option>呼叫类型</option></select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          输入3
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床801</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8001</option></select>
+                        </div>
+                        <div class="col-sm-3 col-md-3 text-right">
+                          <select><option>呼叫类型</option></select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          输入4
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床801</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8001</option></select>
+                        </div>
+                        <div class="col-sm-3 col-md-3 text-right">
+                          <select><option>呼叫类型</option></select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          输入5
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床801</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8001</option></select>
+                        </div>
+                        <div class="col-sm-3 col-md-3 text-right">
+                          <select><option>呼叫类型</option></select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          输入6
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床801</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8001</option></select>
+                        </div>
+                        <div class="col-sm-3 col-md-3 text-right">
+                          <select><option>呼叫类型</option></select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          输入7
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床801</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8001</option></select>
+                        </div>
+                        <div class="col-sm-3 col-md-3 text-right">
+                          <select><option>呼叫类型</option></select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          输入8
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床801</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8001</option></select>
+                        </div>
+                        <div class="col-sm-3 col-md-3 text-right">
+                          <select><option>呼叫类型</option></select>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="parameters-item">
+                  <h3>输出参数配置</h3>
+                  <ul>
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          输入1
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床801</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8001</option></select>
+                        </div>
+                        <div class="col-sm-3 col-md-3 text-right">
+                          <select><option>呼叫类型</option></select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          输入2
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床801</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8001</option></select>
+                        </div>
+                        <div class="col-sm-3 col-md-3 text-right">
+                          <select><option>呼叫类型</option></select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          输入3
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床801</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8001</option></select>
+                        </div>
+                        <div class="col-sm-3 col-md-3 text-right">
+                          <select><option>呼叫类型</option></select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          输入4
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床801</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8001</option></select>
+                        </div>
+                        <div class="col-sm-3 col-md-3 text-right">
+                          <select><option>呼叫类型</option></select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          输入5
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床801</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8001</option></select>
+                        </div>
+                        <div class="col-sm-3 col-md-3 text-right">
+                          <select><option>呼叫类型</option></select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          输入6
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床801</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8001</option></select>
+                        </div>
+                        <div class="col-sm-3 col-md-3 text-right">
+                          <select><option>呼叫类型</option></select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          输入7
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床801</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8001</option></select>
+                        </div>
+                        <div class="col-sm-3 col-md-3 text-right">
+                          <select><option>呼叫类型</option></select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-1 col-md-1">
+                          输入8
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床801</option></select>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                          <select><option>病床8001</option></select>
+                        </div>
+                        <div class="col-sm-3 col-md-3 text-right">
+                          <select><option>呼叫类型</option></select>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td valign="bottom">
+              <div class="footer">
+                <div class="copyright">&copy;2013 Televic</div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="header-bar">
+  <ul>
+    <li><a href="hosts.html"><span class="icon icon-1"></span> <span>设备管理</span></a></li>
+    <li><a href="scheduling_month.html"><span class="icon icon-2"></span> <span>护士排班</span></a></li>
+    <li><a href="#"><span class="icon icon-3"></span> <span>历史记录</span></a></li>
+    <li><a href="#"><span class="icon icon-4"></span> <span>人员管理</span></a></li>
+  </ul>
+  <div class="clearfix"></div>
+</div>
+</body>
+</html>
