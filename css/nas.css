@@ -251,7 +251,7 @@ select:focus { outline:0; }
 .facilities-item ul li.new:hover .tip { opacity:1; }
 .facilities-item ul li.active:hover .tip { opacity:0; }
 .facilities-item ul li.new .create { text-indent:-2500000px; background:url(../img/ico_plus.png) no-repeat 50% 50%; }
-.floor-plan { margin:30px auto; width:850px; height:515px; background:url(../img/floor_plan_1.jpg) no-repeat 0 0; }
+.floor-plan { margin:30px auto; width:850px; height:515px; }
 
 .header-bar { position:absolute; top:-206px; left:0; right:0; z-index:9999999; background:#1d1d1d; background:rgba(0,0,0,.95); padding:37px; -o-transition:top .25s ease; -moz-transition:top .25s ease; -ms-transition:top .25s ease; -webkit-transition:top .25s ease; transition:top .25s ease; }
 .header-bar ul { list-style:none; margin:0 auto; padding:0 0 0 7px; width:523px; height:126px; }

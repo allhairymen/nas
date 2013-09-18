@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>设备配置 - NAS - 护士呼叫管理系统</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/nas.css">
-<script src="js/vendor/jquery-2.0.3.js"></script>
-<script src="js/vendor/bootstrap.js"></script>
-<script src="js/vendor/handlebars.js"></script>
-<script src="js/app/universal.js"></script>
-<script src="js/app/scheduling/general.js"></script>
-<script src="js/app/scheduling/day.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>设备配置 - NAS - 护士呼叫管理系统</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/nas.css">
+  <link rel="stylesheet" href="css/smooth_zoom.css">
+  <script src="js/vendor/jquery-2.0.3.js"></script>
+  <script src="js/vendor/jquery.smoothZoom.js"></script>
+  <script src="js/vendor/bootstrap.js"></script>
+  <script src="js/vendor/handlebars.js"></script>
+  <script src="js/app/universal.js"></script>
+  <script src="js/app/facilities/floor_plan.js"></script>
 </head>
 
 <body>
-<div class="header">
-  <div class="logo">
-    <h1><a href="hosts.html"><i class="icon icon-1"></i><span class="title">设备配置</span></a><span class="seperator"><i></i></span><a href="#" class="caret js-show-nav"><i></i></a></h1>
-  </div>
-  <ul class="operation-nav">
+  <div class="header">
+    <div class="logo">
+      <h1><a href="hosts.html"><i class="icon icon-1"></i><span class="title">设备配置</span></a><span class="seperator"><i></i></span><a href="#" class="caret js-show-nav"><i></i></a></h1>
+    </div>
+    <ul class="operation-nav">
     <!--<li><a href="#" onClick="alert('只能对单个设备进行操作')">编辑</a></li>
     <li><a href="#" onClick="alert('请至少选择一个设备')">删除</a></li>-->
     <li><a href="facilities.html">病区图</a></li>
@@ -39,21 +40,21 @@
     <div class="nav-pane-container">
       <div class="fill-content">
         <ul class="type-1">
-          <li draggable="true"><a href="#"><i class="bullet"></i>护士站 1</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>护士站 2</a></li>
+          <li draggable="true"><a draggable="false" href="#"><i class="bullet"></i>护士站 1</a></li>
+          <li draggable="true"><a draggable="false" href="#"><i class="bullet"></i>护士站 2</a></li>
         </ul>
         <ul class="type-2">
-          <li draggable="true"><a href="#"><i class="bullet"></i>801 房</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>802 房</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>803 房</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>804 房</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>805 房</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>806 房</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>807 房</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>808 房</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>809 房</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>810 房</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>811 房</a></li>
+          <li draggable="true"><a draggable="false" href="#"><i class="bullet"></i>801 房</a></li>
+          <li draggable="true"><a draggable="false" href="#"><i class="bullet"></i>802 房</a></li>
+          <li draggable="true"><a draggable="false" href="#"><i class="bullet"></i>803 房</a></li>
+          <li draggable="true"><a draggable="false" href="#"><i class="bullet"></i>804 房</a></li>
+          <li draggable="true"><a draggable="false" href="#"><i class="bullet"></i>805 房</a></li>
+          <li draggable="true"><a draggable="false" href="#"><i class="bullet"></i>806 房</a></li>
+          <li draggable="true"><a draggable="false" href="#"><i class="bullet"></i>807 房</a></li>
+          <li draggable="true"><a draggable="false" href="#"><i class="bullet"></i>808 房</a></li>
+          <li draggable="true"><a draggable="false" href="#"><i class="bullet"></i>809 房</a></li>
+          <li draggable="true"><a draggable="false" href="#"><i class="bullet"></i>810 房</a></li>
+          <li draggable="true"><a draggable="false" href="#"><i class="bullet"></i>811 房</a></li>
         </ul>
       </div>
     </div>
@@ -84,8 +85,10 @@
           <tr>
             <td valign="top" height="100%">
               <div class="right-column-content-main">
-                <div class="floor-plan">
-                
+                <div id="zoom_container" class="floor-plan">
+                  <img id="floor-plan" src="img/floor_plan_1.jpg" width="850px" height="515px" />
+                  <div class="landmarks" data-show-at-zoom="100" data-allow-drag="false">
+                  </div>
                 </div>  
               </div>
             </td>
@@ -112,5 +115,16 @@
   </ul>
   <div class="clearfix"></div>
 </div>
+
+<script id="landmark-template" type="text/x-handlebars-template">
+<div id="{{ id }}" class="item mark" data-position="{{ posX }},{{ posY }}" data-show-at-zoom="0" draggable="true">
+  <div>
+    <div class="text">
+      <strong>{{ name }}</strong>
+    </div>
+    <img draggable="false" src="img/pin.png" width="50px" height="40px" alt="{{ name }}" />    
+  </div>    
+</div>        
+</script>
 </body>
 </html>
