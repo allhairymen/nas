@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>设备配置 - NAS - 护士呼叫管理系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/nas.css">
+<script src="js/vendor/jquery-2.0.3.js"></script>
+<script src="js/vendor/bootstrap.js"></script>
+<script src="js/vendor/handlebars.js"></script>
+<script src="js/app/universal.js"></script>
+<script src="js/app/scheduling/general.js"></script>
+<script src="js/app/scheduling/day.js"></script>
+</head>
+
+<body>
+<div class="header">
+  <div class="logo">
+    <h1><a href="hosts.html"><i class="icon icon-1"></i><span class="title">设备配置</span></a><span class="seperator"><i></i></span><a href="#" class="caret js-show-nav"><i></i></a></h1>
+  </div>
+  <ul class="operation-nav">
+    <!--<li><a href="#" onClick="alert('只能对单个设备进行操作')">编辑</a></li>
+    <li><a href="#" onClick="alert('请至少选择一个设备')">删除</a></li>-->
+    <li><a href="facilities.html">病区图</a></li>
+  </ul>
+  <div class="user">
+    <a href="#"><span class="user-name">Admin</span><span class="user-avatar"><img src="img/default_avatar_s.png" alt=""></span></a>
+  </div>
+</div>
+<div class="base">
+  <div class="left-column">
+    <div class="search-container">
+      <form class="" action="" method="get">
+        <label><input class="search-box" type="text" name="" placeholder="搜索IP地址段" autocomplete="Off" maxlength="500"></label>
+        <input title="搜索" class="search-go" type="submit" value="搜索">
+      </form>
+    </div>
+    <div class="nav-pane-container">
+      <div class="fill-content">
+        <ul class="type-1">
+          <li draggable="true"><a href="#"><i class="bullet"></i>护士站 1</a></li>
+          <li draggable="true"><a href="#"><i class="bullet"></i>护士站 2</a></li>
+        </ul>
+        <ul class="type-2">
+          <li draggable="true"><a href="#"><i class="bullet"></i>801 房</a></li>
+          <li draggable="true"><a href="#"><i class="bullet"></i>802 房</a></li>
+          <li draggable="true"><a href="#"><i class="bullet"></i>803 房</a></li>
+          <li draggable="true"><a href="#"><i class="bullet"></i>804 房</a></li>
+          <li draggable="true"><a href="#"><i class="bullet"></i>805 房</a></li>
+          <li draggable="true"><a href="#"><i class="bullet"></i>806 房</a></li>
+          <li draggable="true"><a href="#"><i class="bullet"></i>807 房</a></li>
+          <li draggable="true"><a href="#"><i class="bullet"></i>808 房</a></li>
+          <li draggable="true"><a href="#"><i class="bullet"></i>809 房</a></li>
+          <li draggable="true"><a href="#"><i class="bullet"></i>810 房</a></li>
+          <li draggable="true"><a href="#"><i class="bullet"></i>811 房</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="right-column">
+    <div class="right-column-header">
+      <div class="header-title">
+        <h2 class="set-title">楼层图</h2>
+        <div class="set-breadcrumb-bar">
+          <ul>
+            <li><a href="hosts.html">控制主机：1</a></li>
+            <li><span class="caret"><i></i></span>外科</li>
+            <li><span class="caret"><i></i></span>楼层图</li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-buttons">
+        <ul>
+          <li class="type-1"><i class="bullet"></i>护士站</li>
+          <li class="type-2"><i class="bullet"></i>LED灯</li>
+          <li class="type-3"><i class="bullet"></i>房间</li>
+        </ul>
+      </div>
+    </div>
+    <div class="right-column-content">
+      <div class="fill-content">
+        <table>
+          <tr>
+            <td valign="top" height="100%">
+              <div class="right-column-content-main">
+                <div class="floor-plan">
+                
+                </div>  
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td valign="bottom">
+              <div class="footer">
+                <div class="copyright">&copy;2013 Televic</div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="header-bar">
+  <ul>
+    <li><a href="hosts.html"><span class="icon icon-1"></span> <span>设备管理</span></a></li>
+    <li><a href="scheduling_month.html"><span class="icon icon-2"></span> <span>护士排班</span></a></li>
+    <li><a href="#"><span class="icon icon-3"></span> <span>历史记录</span></a></li>
+    <li><a href="#"><span class="icon icon-4"></span> <span>人员管理</span></a></li>
+  </ul>
+  <div class="clearfix"></div>
+</div>
+</body>
+</html>

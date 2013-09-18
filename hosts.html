@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>病区设置 - NAS - 护士呼叫管理系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/nas.css">
+<script src="js/vendor/jquery-2.0.3.js"></script>
+<script src="js/vendor/bootstrap.js"></script>
+<script src="js/vendor/handlebars.js"></script>
+<script src="js/app/universal.js"></script>
+<script src="js/app/scheduling/general.js"></script>
+<script src="js/app/scheduling/day.js"></script>
+</head>
+
+<body>
+<div class="header">
+  <div class="logo">
+    <h1><a href="hosts.html"><i class="icon icon-1"></i><span class="title">设备配置</span></a><span class="seperator"><i></i></span><a href="#" class="caret js-show-nav"><i></i></a></h1>
+  </div>
+  <ul class="operation-nav">
+    <li><a href="#" onClick="alert('只能对单个设备进行操作')">重命名</a></li>
+    <li><a href="#" onClick="alert('请至少选择一个设备')">删除</a></li>
+  </ul>
+  <div class="user">
+    <a href="#"><span class="user-name">Admin</span><span class="user-avatar"><img src="img/default_avatar_s.png" alt=""></span></a>
+  </div>
+</div>
+<div class="base">
+  <div class="full-column hosts-management">
+    <div class="column-header">
+      <div class="header-title">
+        <h2 class="set-title">控制主机</h2>
+        <div class="set-breadcrumb-bar">
+          <ul>
+            <li>[控制主机数：2]</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="right-column-content">
+      <div class="fill-content">
+        <table>
+          <tr>
+            <td valign="top" height="100%">
+              <div class="right-column-content-main">
+                <div class="hosts facilities-item">
+                  <h3>控制主机：1 <span class="amount">[病区数：2]</span></h3>
+                  <ul>
+                    <li class="active"><div class="cover"><a href="facilities.html"><span class="host-info">外科<br><span class="rooms">房间节点 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox" checked></li>
+                    <li><div class="cover"><a href="facilities.html"><span class="host-info">内科<br><span class="rooms">房间节点 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
+                    <li class="new"><div class="cover"><a href="#" class="create">+</a></div></li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="hosts facilities-item">
+                  <h3>控制主机：2 <span class="amount">[病区数：0]</span></h3>
+                  <ul>
+                    <li class="new"><div class="cover"><a href="#" class="create">+</a></div></li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td valign="bottom">
+              <div class="footer">
+                <div class="copyright">&copy;2013 Televic</div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="header-bar">
+  <ul>
+    <li><a href="hosts.html"><span class="icon icon-1"></span> <span>设备管理</span></a></li>
+    <li><a href="scheduling_month.html"><span class="icon icon-2"></span> <span>护士排班</span></a></li>
+    <li><a href="#"><span class="icon icon-3"></span> <span>历史记录</span></a></li>
+    <li><a href="#"><span class="icon icon-4"></span> <span>人员管理</span></a></li>
+  </ul>
+  <div class="clearfix"></div>
+</div>
+</body>
+</html>
