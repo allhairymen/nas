@@ -10,8 +10,7 @@
 <script src="js/vendor/bootstrap.js"></script>
 <script src="js/vendor/handlebars.js"></script>
 <script src="js/app/universal.js"></script>
-<script src="js/app/scheduling/general.js"></script>
-<script src="js/app/scheduling/day.js"></script>
+<script src="js/app/facilities/facilities.js"></script>
 </head>
 
 <body>
@@ -20,8 +19,8 @@
     <h1><a href="hosts.html"><i class="icon icon-1"></i><span class="title">设备配置</span></a><span class="seperator"><i></i></span><a href="#" class="caret js-show-nav"><i></i></a></h1>
   </div>
   <ul class="operation-nav">
-    <li><a href="#" onClick="alert('只能对单个设备进行操作')">编辑</a></li>
-    <li><a href="#myModal_1" data-toggle="modal">删除</a></li>
+    <li><a href="#" class="js-edit-btn">编辑</a></li>
+    <li><a href="#myModal_1" class="js-delete-btn">删除</a></li>
     <li><a href="floor_plan.html">楼层图</a></li>
   </ul>
   <div class="user">
@@ -38,32 +37,32 @@
     </div>
     <div class="nav-pane-container">
       <div class="fill-content">
-        <ul class="type-1">
-          <li draggable="true"><a href="#"><i class="bullet"></i>护士站 1</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>护士站 2</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>护士站 3</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>护士站 4</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>192.168.1.4</a></li>
+        <ul data-type-class="nurse-stations" class="type-1">
+          <li id="ns-1"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">护士站 1</span></a></li>
+          <li id="ns-2"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">护士站 2</span></a></li>
+          <li id="ns-3"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">护士站 3</span></a></li>
+          <li id="ns-4"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">护士站 4</span></a></li>
+          <li id="ns-5" draggable="true"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">192.168.1.4</span></a></li>
         </ul>
-        <ul class="type-2">
-          <li draggable="true"><a href="#"><i class="bullet"></i>201 房</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>192.168.1.6</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>192.168.1.7</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>192.168.1.8</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>192.168.1.9</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>192.168.1.10</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>192.168.1.11</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>192.168.1.12</a></li>
+        <ul data-type-class="wards" class="type-2">
+          <li id="ward-1"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">201 房</span></a></li>
+          <li id="ward-2" draggable="true"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">192.168.1.6</span></a></li>
+          <li id="ward-3" draggable="true"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">192.168.1.7</span></a></li>
+          <li id="ward-4" draggable="true"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">192.168.1.8</span></a></li>
+          <li id="ward-5" draggable="true"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">192.168.1.9</span></a></li>
+          <li id="ward-6" draggable="true"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">192.168.1.10</span></a></li>
+          <li id="ward-7" draggable="true"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">192.168.1.11</span></a></li>
+          <li id="ward-8" draggable="true"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">192.168.1.12</span></a></li>
         </ul>
-        <ul class="type-3">
-          <li draggable="true"><a href="#"><i class="bullet"></i>LED 1</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>192.168.1.14</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>192.168.1.15</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>192.168.1.16</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>192.168.1.17</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>192.168.1.18</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>192.168.1.19</a></li>
-          <li draggable="true"><a href="#"><i class="bullet"></i>192.168.1.20</a></li>
+        <ul data-type-class="led-lights" class="type-3">
+          <li id="led-1"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">LED 1</span></a></li>
+          <li id="led-2" draggable="true"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">192.168.1.14</span></a></li>
+          <li id="led-3" draggable="true"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">192.168.1.15</span></a></li>
+          <li id="led-4" draggable="true"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">192.168.1.16</span></a></li>
+          <li id="led-5" draggable="true"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">192.168.1.17</span></a></li>
+          <li id="led-6" draggable="true"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">192.168.1.18</span></a></li>
+          <li id="led-7" draggable="true"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">192.168.1.19</span></a></li>
+          <li id="led-8" draggable="true"><a draggable="false" href="#"><i class="bullet"></i><span class="facility-name-ip">192.168.1.20</span></a></li>
         </ul>
       </div>
     </div>
@@ -92,31 +91,31 @@
         <table>
           <tr>
             <td valign="top" height="100%">
-              <div class="right-column-content-main">
+              <div class="right-column-content-main js-facilities">
                 <div class="nurse-stations facilities-item">
                   <h3>护士站 <span class="amount">[数量：4]</span></h3>
                   <ul>
-                    <li class="active"><div class="cover"><span class="facility-title">护士站 1 <span class="ip">192.168.0.1</span></span></div><input type="checkbox" value="" class="checkbox" checked></li>
-                    <li><div class="cover"><span class="facility-title">护士站 2 <span class="ip">192.168.0.1</span></span></div><input type="checkbox" value="" class="checkbox"></li>
-                    <li><div class="cover"><span class="facility-title">护士站 3 <span class="ip">192.168.0.1</span></span></div><input type="checkbox" value="" class="checkbox"></li>
-                    <li><div class="cover"><span class="facility-title">护士站 4 <span class="ip">192.168.0.1</span></span></div><input type="checkbox" value="" class="checkbox"></li>
-                    <li class="new"><div class="cover"><a href="#myModal_2" data-toggle="modal"><span class="tip">将IP地址拖曳至此处</span></a></div></li>
+                    <li data-bind-host="#ns-1"><div class="cover"><span class="facility-title"><span class="facility-name" style="font-size: inherit;">护士站 1</span><span class="ip">192.168.0.1</span></span></div><input type="checkbox" value="" class="checkbox"></li>
+                    <li data-bind-host="#ns-2"><div class="cover"><span class="facility-title"><span class="facility-name" style="font-size: inherit;">护士站 2</span><span class="ip">192.168.0.2</span></span></div><input type="checkbox" value="" class="checkbox"></li>
+                    <li data-bind-host="#ns-3"><div class="cover"><span class="facility-title"><span class="facility-name" style="font-size: inherit;">护士站 3</span><span class="ip">192.168.0.3</span></span></div><input type="checkbox" value="" class="checkbox"></li>
+                    <li data-bind-host="#ns-4"><div class="cover"><span class="facility-title"><span class="facility-name" style="font-size: inherit;">护士站 4</span><span class="ip">192.168.0.4</span></span></div><input type="checkbox" value="" class="checkbox"></li>
+                    <li class="new"><div class="cover"><a href="#myModal_2"><span class="tip">将IP地址拖曳至此处</span></a></div></li>
                   </ul>
                   <div class="clearfix"></div>
                 </div>
                 <div class="led-lights facilities-item">
                   <h3>LED灯 <span class="amount">[数量：1]</span></h3>
                   <ul>
-                    <li><div class="cover"><span class="facility-title">LED 1 <span class="ip">192.168.0.1</span></span></div><input type="checkbox" value="" class="checkbox"></li>
-                    <li class="new"><div class="cover"><a href="#myModal_3" data-toggle="modal"><span class="tip">将IP地址拖曳至此处</span></a></div></li>
+                    <li data-bind-host="#led-1"><div class="cover"><span class="facility-title"><span class="facility-name" style="font-size: inherit;">LED 1</span><span class="ip">192.168.0.5</span></span></div><input type="checkbox" value="" class="checkbox"></li>
+                    <li class="new"><div class="cover"><a href="#myModal_3"><span class="tip">将IP地址拖曳至此处</span></a></div></li>
                   </ul>
                   <div class="clearfix"></div>
                 </div>
                 <div class="wards facilities-item">
                   <h3>房间 <span class="amount">[数量：1]</span></h3>
                   <ul>
-                    <li><div class="cover"><a href="parameters.html" class="facility-title">201 房 <span class="ip">192.168.0.1</span></a></div><input type="checkbox" value="" class="checkbox"></li>
-                    <li class="new"><div class="cover"><a href="#myModal_4" data-toggle="modal"><span class="tip">将IP地址拖曳至此处</span></a></div></li>
+                    <li data-bind-host="#ward-1"><div class="cover"><a href="parameters.html" class="facility-title"><span class="facility-name" style="font-size: inherit;">201 房</span><span class="ip">192.168.0.6</span></a></div><input type="checkbox" value="" class="checkbox"></li>
+                    <li class="new"><div class="cover"><a href="#myModal_4"><span class="tip">将IP地址拖曳至此处</span></a></div></li>
                   </ul>
                   <div class="clearfix"></div>
                 </div>
@@ -158,7 +157,7 @@
       </div>
       <div class="modal-footer">
         <div class="row">
-          <div class="col-md-6"><button type="button" class="btn">确定</button></div>
+          <div class="col-md-6"><button type="button" class="btn js-confirm-btn">确定</button></div>
           <div class="col-md-6"><button type="button" class="btn" data-dismiss="modal">取消</button></div>
         </div>
       </div>
@@ -173,11 +172,11 @@
         <h4 class="modal-title">护士站配置</h4>
       </div>
       <div class="modal-body">
-        <input type="text" maxlength="255" placeholder="请输入护士站名">
+        <input name="facility-name" type="text" maxlength="255" placeholder="请输入护士站名">
       </div>
       <div class="modal-footer">
         <div class="row">
-          <div class="col-md-6"><button type="button" class="btn">确定</button></div>
+          <div class="col-md-6"><button type="button" class="btn js-confirm-btn">确定</button></div>
           <div class="col-md-6"><button type="button" class="btn" data-dismiss="modal">取消</button></div>
         </div>
       </div>
@@ -192,11 +191,11 @@
         <h4 class="modal-title">LED灯配置</h4>
       </div>
       <div class="modal-body">
-        <input type="text" maxlength="255" placeholder="请输入LED灯名">
+        <input name="facility-name" type="text" maxlength="255" placeholder="请输入LED灯名">
       </div>
       <div class="modal-footer">
         <div class="row">
-          <div class="col-md-6"><button type="button" class="btn">确定</button></div>
+          <div class="col-md-6"><button type="button" class="btn js-confirm-btn">确定</button></div>
           <div class="col-md-6"><button type="button" class="btn" data-dismiss="modal">取消</button></div>
         </div>
       </div>
@@ -211,16 +210,29 @@
         <h4 class="modal-title">房间配置</h4>
       </div>
       <div class="modal-body">
-        <input type="text" maxlength="255" placeholder="请输入房间名">
+        <input name="facility-name" type="text" maxlength="255" placeholder="请输入房间名">
       </div>
       <div class="modal-footer">
         <div class="row">
-          <div class="col-md-6"><button type="button" class="btn">确定</button></div>
+          <div class="col-md-6"><button type="button" class="btn js-confirm-btn">确定</button></div>
           <div class="col-md-6"><button type="button" class="btn" data-dismiss="modal">取消</button></div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+<script id="facility-template" type="text/x-handlebars-template">
+<li data-bind-host="#{{ srcId }}">
+  <div class="cover">
+    <span class="facility-title">
+      <span class="facility-name" style="fontsize: inherit;">{{ name }}</span>
+      <span class="ip">{{ ip }}</span>
+    </span>
+  </div>
+  <input type="checkbox" class="checkbox">
+</li>
+</script>
 </body>
 </html>
