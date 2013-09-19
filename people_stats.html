@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>人员管理 - NAS - 护士呼叫管理系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/nas.css">
+<script src="js/vendor/jquery-2.0.3.js"></script>
+<script src="js/vendor/bootstrap.js"></script>
+<script src="js/app/universal.js"></script>
+<script>
+!function ($) {
+  $(function(){
+    $("[data-toggle=popover]")
+	.popover('show')
+  })
+}(window.jQuery)
+</script>
+</head>
+
+<body>
+<div class="header">
+  <div class="logo">
+    <h1><a href="people_management.html"><i class="icon icon-4"></i><span class="title">人员管理</span></a><span class="seperator"><i></i></span><a href="#" class="caret js-show-nav"><i></i></a></h1>
+  </div>
+  <ul class="operation-nav">
+    <li><a href="#myModal_1" data-toggle="modal">删除</a></li>
+  </ul>
+  <div class="user">
+    <a href="profile.html"><span class="user-name">Admin</span><span class="user-avatar"><img src="img/default_avatar_s.png" alt=""></span></a>
+  </div>
+</div>
+<div class="base">
+  <div class="full-column hosts-management">
+    <div class="column-header">
+      <div class="header-title">
+        <h2 class="set-title">外科</h2>
+        <div class="set-breadcrumb-bar">
+          <ul>
+            <li>人员统计</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="right-column-content">
+      <div class="fill-content">
+        <table>
+          <tr>
+            <td valign="top" height="100%">
+              <div class="right-column-content-main">
+                <div class="people-stats">
+                  <ul>
+                    <li>
+                      <div class="row row-header">
+                        <div class="col-xs-4 col-sm-4 col-md-4">编号</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">姓名</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">工号</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">护士组</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row record">
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                          <label>
+                            <input type="checkbox" value="" class="checkbox">
+                            <img src="img/user_avatar.jpg" alt="" class="user-avatar">
+                            001
+                          </label>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">安娜</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">0001</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">护士组1</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">
+                          <span class="edit"><a href="people_profile.html">编辑</a></span>
+                          <span class="del"><a href="#" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content='<div class="item-delete-panel"><p>是否删除该配置？</p><div class="row"><div class="col-md-6"><button type="button" class="btn btn-green">删除</button></div><div class="col-md-6"><button type="button" class="btn btn-default popover-close">取消</button></div></div></div>'>删除</a></span>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row record">
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                          <label>
+                            <input type="checkbox" value="" class="checkbox">
+                            <img src="img/user_avatar.jpg" alt="" class="user-avatar">
+                            001
+                          </label>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">安娜</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">0001</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">护士组1</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">
+                          <span class="edit"><a href="people_profile.html">编辑</a></span>
+                          <span class="del"><a>删除</a></span>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row record">
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                          <label>
+                            <input type="checkbox" value="" class="checkbox">
+                            <img src="img/user_avatar.jpg" alt="" class="user-avatar">
+                            001
+                          </label>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">安娜</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">0001</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">护士组1</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">
+                          <span class="edit"><a href="people_profile.html">编辑</a></span>
+                          <span class="del"><a>删除</a></span>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row record">
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                          <label>
+                            <input type="checkbox" value="" class="checkbox">
+                            <img src="img/user_avatar.jpg" alt="" class="user-avatar">
+                            001
+                          </label>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">安娜</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">0001</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">护士组1</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">
+                          <span class="edit"><a href="people_profile.html">编辑</a></span>
+                          <span class="del"><a>删除</a></span>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row record">
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                          <label>
+                            <input type="checkbox" value="" class="checkbox">
+                            <img src="img/user_avatar.jpg" alt="" class="user-avatar">
+                            001
+                          </label>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">安娜</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">0001</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">护士组1</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">
+                          <span class="edit"><a href="people_profile.html">编辑</a></span>
+                          <span class="del"><a>删除</a></span>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row record">
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                          <label>
+                            <input type="checkbox" value="" class="checkbox">
+                            <img src="img/user_avatar.jpg" alt="" class="user-avatar">
+                            001
+                          </label>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">安娜</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">0001</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">护士组1</div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">
+                          <span class="edit"><a href="people_profile.html">编辑</a></span>
+                          <span class="del"><a>删除</a></span>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td valign="bottom">
+              <div class="footer">
+                <div class="copyright">&copy;2013 Televic</div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="copyright">&copy;2013 Televic</div>
+</div>
+
+<div class="header-bar">
+  <ul>
+    <li><a href="hosts.html"><span class="icon icon-1"></span> <span>设备管理</span></a></li>
+    <li><a href="scheduling_month.html"><span class="icon icon-2"></span> <span>护士排班</span></a></li>
+    <li><a href="history.html"><span class="icon icon-3"></span> <span>历史记录</span></a></li>
+    <li><a href="people_management.html"><span class="icon icon-4"></span> <span>人员管理</span></a></li>
+  </ul>
+  <div class="clearfix"></div>
+</div>
+
+<div class="modal modal-public-edit modal-public-delete fade" id="myModal_1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">提醒</h4>
+      </div>
+      <div class="modal-body">
+        <p>此操作将删除掉该病区内所有配置信息，<br>确定要删除吗？</p>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col-md-6"><button type="button" class="btn">确定</button></div>
+          <div class="col-md-6"><button type="button" class="btn" data-dismiss="modal">取消</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
