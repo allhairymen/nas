@@ -4,6 +4,7 @@
 
     NAS.universal = {};
     NAS.scheduling = {};
+    NAS.facilities = {};
     NAS.utils = {};
 
     NAS.universal.NAV_BAR_TOP_POS = '-206px';
