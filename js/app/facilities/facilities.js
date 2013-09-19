@@ -1,5 +1,6 @@
 +function ($) { 'use strict';
   var Handlebars = this.Handlebars,
+      NAS = this.NAS,
 
   _grabDragData = function (dataTransfer) {
     var jsonStr = dataTransfer.getData('text/plain');
@@ -29,12 +30,6 @@
     }
   },
 
-  onFacilityChecked = function (e) {
-    e.stopPropagation();
-    var addOrRemove = $(this).prop('checked') ? 'addClass' : 'removeClass';
-    $(this).parent('li')[addOrRemove]('active');
-  },
-
   _updateFacilityAmount = function ($facilityItems) {
     $facilityItems.each(function (index, items) {
       var $items = $(items),
@@ -53,7 +48,7 @@
 
     $opNav.on('click', 'a.js-edit-btn', function (e) {
       e.preventDefault();
-      var $toEditFacilities = $facilities.find(':checked').parent('li'),
+      var $toEditFacilities = $facilities.find(':checkbox:checked').parent('li'),
           quant = $toEditFacilities.length,
           $facilityItems = $($toEditFacilities.parents('.facilities-item')[0]);
       if (quant == 1) {
@@ -134,7 +129,7 @@
 
     $hosts.on('dragstart', 'li[draggable=true]', onFacilityDragstart);
     $facilities.on('dragover', 'ul li.new', onDragFacilityOverDropzone);
-    $facilities.on('change', ':checkbox', onFacilityChecked);
+    $facilities.on('change', ':checkbox', NAS.facilities.onFacilityChecked);
     $facilities.on('dragleave', 'ul li.new', function (e) {
       $(e.currentTarget).removeClass("active");
     });
