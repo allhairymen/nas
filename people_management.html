@@ -10,8 +10,8 @@
 <script src="js/vendor/bootstrap.js"></script>
 <script src="js/vendor/handlebars.js"></script>
 <script src="js/app/universal.js"></script>
-<script src="js/app/scheduling/general.js"></script>
-<script src="js/app/scheduling/week.js"></script>
+<script src="js/app/facilities/general.js"></script>
+<script src="js/app/people/management.js"></script>
 </head>
 
 <body>
@@ -20,8 +20,8 @@
     <h1><a href="people_management.html"><i class="icon icon-4"></i><span class="title">人员管理</span></a><span class="seperator"><i></i></span><a href="#" class="caret js-show-nav"><i></i></a></h1>
   </div>
   <ul class="operation-nav">
-    <li><a href="#myModal_2" data-toggle="modal">重命名</a></li>
-    <li><a href="#myModal_1" data-toggle="modal">删除</a></li>
+    <li><a class="js-edit-btn" href="#myModal_2">重命名</a></li>
+    <li><a class="js-delete-btn" href="#myModal_1">删除</a></li>
   </ul>
   <div class="user">
     <a href="profile.html"><span class="user-name">Admin</span><span class="user-avatar"><img src="img/default_avatar_s.png" alt=""></span></a>
@@ -38,13 +38,13 @@
       <div class="fill-content">
         <div class="groups">
           <ul>
-            <li class="active"><div class="cover"><a href="people_stats.html"><img src="img/cover_1.jpg" alt=""><span class="group-info">妇科 1<br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox" checked></li>
-            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_2.jpg" alt=""><span class="group-info">外科 1<br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
-            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_2.jpg" alt=""><span class="group-info">外科 2<br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
-            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_3.jpg" alt=""><span class="group-info">儿科<br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
-            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_1.jpg" alt=""><span class="group-info">妇科 2<br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox" checked></li>
-            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_4.jpg" alt=""><span class="group-info">五官科<br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
-            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_5.jpg" alt=""><span class="group-info">手术室<br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
+            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_1.jpg" alt=""><span class="group-info"><span class="name">妇科 1</span><br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
+            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_2.jpg" alt=""><span class="group-info"><span class="name">外科 1</span><br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
+            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_2.jpg" alt=""><span class="group-info"><span class="name">外科 2</span><br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
+            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_3.jpg" alt=""><span class="group-info"><span class="name">儿科</span><br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
+            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_1.jpg" alt=""><span class="group-info"><span class="name">妇科 2</span><br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
+            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_4.jpg" alt=""><span class="group-info"><span class="name">五官科</span><br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
+            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_5.jpg" alt=""><span class="group-info"><span class="name">手术室</span><br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
             <li class="new"><div class="cover"><a href="#myModal_2" class="create" data-toggle="modal">+</a></div></li>
           </ul>
           <div class="clearfix"></div>
@@ -79,7 +79,7 @@
       </div>
       <div class="modal-footer">
         <div class="row">
-          <div class="col-md-6"><button type="button" class="btn">确定</button></div>
+          <div class="col-md-6"><button type="button" class="btn js-confirm-btn">确定</button></div>
           <div class="col-md-6"><button type="button" class="btn" data-dismiss="modal">取消</button></div>
         </div>
       </div>
@@ -94,16 +94,34 @@
         <h4 class="modal-title">编辑病区</h4>
       </div>
       <div class="modal-body">
-        <input type="text" maxlength="255" placeholder="请输入病区名">
+        <input name="name" type="text" maxlength="255" placeholder="请输入病区名">
       </div>
       <div class="modal-footer">
         <div class="row">
-          <div class="col-md-6"><button type="button" class="btn">确定</button></div>
+          <div class="col-md-6"><button type="button" class="btn js-confirm-btn">确定</button></div>
           <div class="col-md-6"><button type="button" class="btn" data-dismiss="modal">取消</button></div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script id="person-template" type="text/x-handlebars-template">
+<li>
+  <div class="cover">
+    <a href="people_stats.html">
+      <img src="img/cover_1.jpg" alt="">
+      <span class="group-info">
+        <span class="name">{{ name }}</span>
+        <br>
+        <span class="people"> 人数
+          <span class="count">0</span>
+        </span>
+      </span>
+    </a>
+  </div>
+  <input type="checkbox" value="" class="checkbox">
+</li>
+</script>
 </body>
 </html>

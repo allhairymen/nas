@@ -347,6 +347,7 @@ select:focus { outline:0; }
 .people-management .column-content .groups ul li .group-title, 
 .people-management .column-content .groups ul li a { position:relative; font-size:16px; }
 .people-management .column-content .groups ul li a .group-info { display:block; position:absolute; left:10px; bottom:3px; width:220px; height:auto; font-size:12px; text-align:left; line-height:16px; }
+.people-management .column-content .groups ul li a .group-info .name { display:inline; width:auto; height:auto; line-height:normal; }
 .people-management .column-content .groups ul li a .group-info .people { opacity:.6; width:100%; height:auto; line-height:normal; text-align:left; }
 .people-management .column-content .groups ul li a .count { float:right; width:auto; height:auto; line-height:normal; text-align:right; }
 .people-management .column-content .groups ul li.active { border-color:#eee; }
