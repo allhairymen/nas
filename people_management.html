@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>个人信息 - 人员管理 - NAS - 护士呼叫管理系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/nas.css">
+<script src="js/vendor/jquery-2.0.3.js"></script>
+<script src="js/vendor/bootstrap.js"></script>
+<script src="js/vendor/handlebars.js"></script>
+<script src="js/app/universal.js"></script>
+<script src="js/app/scheduling/general.js"></script>
+<script src="js/app/scheduling/week.js"></script>
+</head>
+
+<body>
+<div class="header">
+  <div class="logo">
+    <h1><a href="people_management.html"><i class="icon icon-4"></i><span class="title">人员管理</span></a><span class="seperator"><i></i></span><a href="#" class="caret js-show-nav"><i></i></a></h1>
+  </div>
+  <ul class="operation-nav">
+    <li><a href="#myModal_2" data-toggle="modal">重命名</a></li>
+    <li><a href="#myModal_1" data-toggle="modal">删除</a></li>
+  </ul>
+  <div class="user">
+    <a href="profile.html"><span class="user-name">Admin</span><span class="user-avatar"><img src="img/default_avatar_s.png" alt=""></span></a>
+  </div>
+</div>
+<div class="base">
+  <div class="full-column people-management">
+    <div class="column-header">
+      <div class="header-title">
+        <h2 class="set-title"></h2>
+      </div>
+    </div>
+    <div class="column-content">
+      <div class="fill-content">
+        <div class="groups">
+          <ul>
+            <li class="active"><div class="cover"><a href="people_stats.html"><img src="img/cover_1.jpg" alt=""><span class="group-info">妇科 1<br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox" checked></li>
+            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_2.jpg" alt=""><span class="group-info">外科 1<br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
+            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_2.jpg" alt=""><span class="group-info">外科 2<br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
+            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_3.jpg" alt=""><span class="group-info">儿科<br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
+            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_1.jpg" alt=""><span class="group-info">妇科 2<br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox" checked></li>
+            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_4.jpg" alt=""><span class="group-info">五官科<br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
+            <li><div class="cover"><a href="people_stats.html"><img src="img/cover_5.jpg" alt=""><span class="group-info">手术室<br><span class="people">人数 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
+            <li class="new"><div class="cover"><a href="#myModal_2" class="create" data-toggle="modal">+</a></div></li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="copyright">&copy;2013 Televic</div>
+</div>
+
+<div class="header-bar">
+  <ul>
+    <li><a href="hosts.html"><span class="icon icon-1"></span> <span>设备管理</span></a></li>
+    <li><a href="scheduling_month.html"><span class="icon icon-2"></span> <span>护士排班</span></a></li>
+    <li><a href="history.html"><span class="icon icon-3"></span> <span>历史记录</span></a></li>
+    <li><a href="people_management.html"><span class="icon icon-4"></span> <span>人员管理</span></a></li>
+  </ul>
+  <div class="clearfix"></div>
+</div>
+
+<div class="modal modal-public-edit modal-public-delete fade" id="myModal_1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">提醒</h4>
+      </div>
+      <div class="modal-body">
+        <p>此操作将删除掉该病区内所有配置信息，<br>确定要删除吗？</p>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col-md-6"><button type="button" class="btn">确定</button></div>
+          <div class="col-md-6"><button type="button" class="btn" data-dismiss="modal">取消</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal modal-public-edit fade" id="myModal_2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">编辑病区</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" maxlength="255" placeholder="请输入病区名">
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col-md-6"><button type="button" class="btn">确定</button></div>
+          <div class="col-md-6"><button type="button" class="btn" data-dismiss="modal">取消</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
