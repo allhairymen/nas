@@ -33,6 +33,16 @@
     e.stopPropagation();
     var addOrRemove = $(this).prop('checked') ? 'addClass' : 'removeClass';
     $(this).parent('li')[addOrRemove]('active');
+  },
+
+  _updateFacilityAmount = function ($facilityItems) {
+    $facilityItems.each(function (index, items) {
+      var $items = $(items),
+          $facilityAmount = $items.find('span.amount'),
+          curAmount = $facilityAmount.text();
+      $facilityAmount.text(curAmount.replace(/\d+/,
+        $items.find('li').not('.new').length));
+    });
   };
 
   $(document).ready(function (e) {
@@ -55,6 +65,7 @@
       var dragData = _grabDragData(e.originalEvent.dataTransfer),
           $modal = $($(this).find('a').attr('href')),
           $dropzone = $(this),
+          $facilityItems = $($dropzone.parents('.facilities-item')[0]);
       $modal.one('click', '.js-confirm-btn', function (e) {
         var $input = $modal.find('input[name=facility-name]'),
             facilityName = $input.val();
@@ -70,6 +81,7 @@
             $dropzone.removeClass('active');
             $src.find('span.facility-name-ip').text(facilityName);
             $src.attr('draggable', 'false');
+            _updateFacilityAmount($facilityItems);
           });
         }
         $input.val('');
@@ -92,6 +104,7 @@
             $bindHost.attr('draggable', 'true');
           });
           $toDeleteFacilities.remove();
+          _updateFacilityAmount($('.facilities-item'));
         });
         $modal.modal('hide');
       });
