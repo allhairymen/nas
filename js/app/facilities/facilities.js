@@ -53,11 +53,31 @@
 
     $opNav.on('click', 'a.js-edit-btn', function (e) {
       e.preventDefault();
-      var toEditFacilities = $facilities.find(':checked').parent('li');
-      if (toEditFacilities.length > 1) {
-        alert('只能对单个设备进行操作');
-      } else if (toEditFacilities.length < 1) {
-        alert('请选择设备');
+      var $toEditFacilities = $facilities.find(':checked').parent('li'),
+          quant = $toEditFacilities.length,
+          $facilityItems = $($toEditFacilities.parents('.facilities-item')[0]);
+      if (quant == 1) {
+        var $modal = $('.modal[data-type-class=' + $facilityItems.attr(
+          'data-type-class') + ']'),
+            $input = $modal.find('input[name=facility-name]'),
+            $facilityName = $toEditFacilities.find('span.facility-name');
+        $input.val($facilityName.text());
+        $modal.one('click', '.js-confirm-btn', function (e) {
+          $modal.one('hidden.bs.modal', function (e) {
+            var newName = $input.val();
+            $facilityName.text(newName);
+            $($toEditFacilities.attr('data-bind-host')).find('span.facility-name-ip').text(newName);
+            $input.val('');
+          });
+          $modal.modal('hide');
+        });
+        $modal.modal('show');
+      } else {
+        if ($toEditFacilities.length > 1) {
+          alert('只能对单个设备进行操作');
+        } else if ($toEditFacilities.length < 1) {
+          alert('请选择设备');
+        }
       }
     });
 
