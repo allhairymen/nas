@@ -8,15 +8,9 @@
 <link rel="stylesheet" href="css/nas.css">
 <script src="js/vendor/jquery-2.0.3.js"></script>
 <script src="js/vendor/bootstrap.js"></script>
+<script src="js/vendor/handlebars.js"></script>
 <script src="js/app/universal.js"></script>
-<script>
-!function ($) {
-  $(function(){
-    $("[data-toggle=popover]")
-	.popover('show')
-  })
-}(window.jQuery)
-</script>
+<script src="js/app/people/stats.js"></script>
 </head>
 
 <body>
@@ -25,7 +19,7 @@
     <h1><a href="people_management.html"><i class="icon icon-4"></i><span class="title">人员管理</span></a><span class="seperator"><i></i></span><a href="#" class="caret js-show-nav"><i></i></a></h1>
   </div>
   <ul class="operation-nav">
-    <li><a href="#myModal_1" data-toggle="modal">删除</a></li>
+    <li><a href="#myModal_1" class="js-delete-btn">删除</a></li>
   </ul>
   <div class="user">
     <a href="profile.html"><span class="user-name">Admin</span><span class="user-avatar"><img src="img/default_avatar_s.png" alt=""></span></a>
@@ -74,7 +68,7 @@
                         <div class="col-xs-2 col-sm-2 col-md-2">护士组1</div>
                         <div class="col-xs-2 col-sm-2 col-md-2">
                           <span class="edit"><a href="people_profile.html">编辑</a></span>
-                          <span class="del"><a href="#" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content='<div class="item-delete-panel"><p>是否删除该配置？</p><div class="row"><div class="col-md-6"><button type="button" class="btn btn-green">删除</button></div><div class="col-md-6"><button type="button" class="btn btn-default popover-close">取消</button></div></div></div>'>删除</a></span>
+                          <span class="del"><a href="#" data-placement="left" data-html="true">删除</a></span>
                         </div>
                       </div>
                     </li>
@@ -211,12 +205,27 @@
       </div>
       <div class="modal-footer">
         <div class="row">
-          <div class="col-md-6"><button type="button" class="btn">确定</button></div>
+          <div class="col-md-6"><button type="button" class="btn js-confirm-btn">确定</button></div>
           <div class="col-md-6"><button type="button" class="btn" data-dismiss="modal">取消</button></div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script id="delete-popover-template" type="text/x-handlebars-template">
+<div class="item-delete-panel">
+  <p>是否删除该配置？</p>
+  <div class="row">
+    <div class="col-md-6">
+      <button type="button" class="btn btn-green js-confirm-btn">删除</button>
+    </div>
+    <div class="col-md-6">
+      <button type="button" class="btn btn-default popover-close js-cancel-btn">取消</button>
+    </div>
+  </div>
+</div>
+</script>
+
 </body>
 </html>
