@@ -21,11 +21,11 @@
   </div>
   <ul class="operation-nav">
     <li><a href="#" onClick="alert('只能对单个设备进行操作')">编辑</a></li>
-    <li><a href="#" onClick="alert('请至少选择一个设备')">删除</a></li>
+    <li><a href="#myModal_1" data-toggle="modal">删除</a></li>
     <li><a href="floor_plan.html">楼层图</a></li>
   </ul>
   <div class="user">
-    <a href="#"><span class="user-name">Admin</span><span class="user-avatar"><img src="img/default_avatar_s.png" alt=""></span></a>
+    <a href="profile.html"><span class="user-name">Admin</span><span class="user-avatar"><img src="img/default_avatar_s.png" alt=""></span></a>
   </div>
 </div>
 <div class="base">
@@ -100,7 +100,7 @@
                     <li><div class="cover"><span class="facility-title">护士站 2 <span class="ip">192.168.0.1</span></span></div><input type="checkbox" value="" class="checkbox"></li>
                     <li><div class="cover"><span class="facility-title">护士站 3 <span class="ip">192.168.0.1</span></span></div><input type="checkbox" value="" class="checkbox"></li>
                     <li><div class="cover"><span class="facility-title">护士站 4 <span class="ip">192.168.0.1</span></span></div><input type="checkbox" value="" class="checkbox"></li>
-                    <li class="new"><div class="cover"><span class="tip">将IP地址拖曳至此处</span></div></li>
+                    <li class="new"><div class="cover"><a href="#myModal_2" data-toggle="modal"><span class="tip">将IP地址拖曳至此处</span></a></div></li>
                   </ul>
                   <div class="clearfix"></div>
                 </div>
@@ -108,7 +108,7 @@
                   <h3>LED灯 <span class="amount">[数量：1]</span></h3>
                   <ul>
                     <li><div class="cover"><span class="facility-title">LED 1 <span class="ip">192.168.0.1</span></span></div><input type="checkbox" value="" class="checkbox"></li>
-                    <li class="new"><div class="cover"><span class="tip">将IP地址拖曳至此处</span></div></li>
+                    <li class="new"><div class="cover"><a href="#myModal_3" data-toggle="modal"><span class="tip">将IP地址拖曳至此处</span></a></div></li>
                   </ul>
                   <div class="clearfix"></div>
                 </div>
@@ -116,7 +116,7 @@
                   <h3>房间 <span class="amount">[数量：1]</span></h3>
                   <ul>
                     <li><div class="cover"><a href="parameters.html" class="facility-title">201 房 <span class="ip">192.168.0.1</span></a></div><input type="checkbox" value="" class="checkbox"></li>
-                    <li class="new"><div class="cover"><span class="tip">将IP地址拖曳至此处</span></div></li>
+                    <li class="new"><div class="cover"><a href="#myModal_4" data-toggle="modal"><span class="tip">将IP地址拖曳至此处</span></a></div></li>
                   </ul>
                   <div class="clearfix"></div>
                 </div>
@@ -140,10 +140,87 @@
   <ul>
     <li><a href="hosts.html"><span class="icon icon-1"></span> <span>设备管理</span></a></li>
     <li><a href="scheduling_month.html"><span class="icon icon-2"></span> <span>护士排班</span></a></li>
-    <li><a href="#"><span class="icon icon-3"></span> <span>历史记录</span></a></li>
-    <li><a href="#"><span class="icon icon-4"></span> <span>人员管理</span></a></li>
+    <li><a href="history.html"><span class="icon icon-3"></span> <span>历史记录</span></a></li>
+    <li><a href="people_management.html"><span class="icon icon-4"></span> <span>人员管理</span></a></li>
   </ul>
   <div class="clearfix"></div>
+</div>
+
+<div class="modal modal-public-edit modal-public-delete fade" id="myModal_1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">提醒</h4>
+      </div>
+      <div class="modal-body">
+        <p>此操作将删除掉该病区内所有配置信息，<br>确定要删除吗？</p>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col-md-6"><button type="button" class="btn">确定</button></div>
+          <div class="col-md-6"><button type="button" class="btn" data-dismiss="modal">取消</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal modal-public-edit fade" id="myModal_2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">护士站配置</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" maxlength="255" placeholder="请输入护士站名">
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col-md-6"><button type="button" class="btn">确定</button></div>
+          <div class="col-md-6"><button type="button" class="btn" data-dismiss="modal">取消</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal modal-public-edit fade" id="myModal_3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">LED灯配置</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" maxlength="255" placeholder="请输入LED灯名">
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col-md-6"><button type="button" class="btn">确定</button></div>
+          <div class="col-md-6"><button type="button" class="btn" data-dismiss="modal">取消</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal modal-public-edit fade" id="myModal_4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">房间配置</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" maxlength="255" placeholder="请输入房间名">
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col-md-6"><button type="button" class="btn">确定</button></div>
+          <div class="col-md-6"><button type="button" class="btn" data-dismiss="modal">取消</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 </html>

@@ -21,10 +21,10 @@
   </div>
   <ul class="operation-nav">
     <li><a href="#" onClick="alert('只能对单个设备进行操作')">重命名</a></li>
-    <li><a href="#" onClick="alert('请至少选择一个设备')">删除</a></li>
+    <li><a href="#myModal_1" data-toggle="modal">删除</a></li>
   </ul>
   <div class="user">
-    <a href="#"><span class="user-name">Admin</span><span class="user-avatar"><img src="img/default_avatar_s.png" alt=""></span></a>
+    <a href="profile.html"><span class="user-name">Admin</span><span class="user-avatar"><img src="img/default_avatar_s.png" alt=""></span></a>
   </div>
 </div>
 <div class="base">
@@ -50,14 +50,14 @@
                   <ul>
                     <li class="active"><div class="cover"><a href="facilities.html"><span class="host-info">外科<br><span class="rooms">房间节点 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox" checked></li>
                     <li><div class="cover"><a href="facilities.html"><span class="host-info">内科<br><span class="rooms">房间节点 <span class="count">0</span></span></span></a></div><input type="checkbox" value="" class="checkbox"></li>
-                    <li class="new"><div class="cover"><a href="#" class="create">+</a></div></li>
+                    <li class="new"><div class="cover"><a href="#myModal_2" class="create" data-toggle="modal">+</a></div></li>
                   </ul>
                   <div class="clearfix"></div>
                 </div>
                 <div class="hosts facilities-item">
                   <h3>控制主机：2 <span class="amount">[病区数：0]</span></h3>
                   <ul>
-                    <li class="new"><div class="cover"><a href="#" class="create">+</a></div></li>
+                    <li class="new"><div class="cover"><a href="#myModal_2" class="create" data-toggle="modal">+</a></div></li>
                   </ul>
                   <div class="clearfix"></div>
                 </div>
@@ -81,10 +81,49 @@
   <ul>
     <li><a href="hosts.html"><span class="icon icon-1"></span> <span>设备管理</span></a></li>
     <li><a href="scheduling_month.html"><span class="icon icon-2"></span> <span>护士排班</span></a></li>
-    <li><a href="#"><span class="icon icon-3"></span> <span>历史记录</span></a></li>
-    <li><a href="#"><span class="icon icon-4"></span> <span>人员管理</span></a></li>
+    <li><a href="history.html"><span class="icon icon-3"></span> <span>历史记录</span></a></li>
+    <li><a href="people_management.html"><span class="icon icon-4"></span> <span>人员管理</span></a></li>
   </ul>
   <div class="clearfix"></div>
+</div>
+
+<div class="modal modal-public-edit modal-public-delete fade" id="myModal_1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">提醒</h4>
+      </div>
+      <div class="modal-body">
+        <p>此操作将删除掉该病区内所有配置信息，<br>确定要删除吗？</p>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col-md-6"><button type="button" class="btn">确定</button></div>
+          <div class="col-md-6"><button type="button" class="btn" data-dismiss="modal">取消</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal modal-public-edit fade" id="myModal_2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">编辑病区</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" maxlength="255" placeholder="请输入病区名">
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col-md-6"><button type="button" class="btn">确定</button></div>
+          <div class="col-md-6"><button type="button" class="btn" data-dismiss="modal">取消</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 </html>
