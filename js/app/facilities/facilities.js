@@ -58,12 +58,14 @@
             $facilityName = $toEditFacilities.find('span.facility-name');
         $input.val($facilityName.text());
         $modal.one('click', '.js-confirm-btn', function (e) {
-          $modal.one('hidden.bs.modal', function (e) {
-            var newName = $input.val();
-            $facilityName.text(newName);
-            $($toEditFacilities.attr('data-bind-host')).find('span.facility-name-ip').text(newName);
-            $input.val('');
-          });
+          var newName = $input.val();
+          if (newName) {
+            $modal.one('hidden.bs.modal', function (e) {
+              $facilityName.text(newName);
+              $($toEditFacilities.attr('data-bind-host')).find('span.facility-name-ip').text(newName);
+              $input.val('');
+            });
+          }
           $modal.modal('hide');
         });
         $modal.modal('show');
