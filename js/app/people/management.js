@@ -20,8 +20,8 @@
             $target.before(personTemplate({name: name}));
           });
           $input.val('');
-          $editModal.modal('hide');
         }
+        $editModal.modal('hide');
       });
       $editModal.modal('show');
     });
