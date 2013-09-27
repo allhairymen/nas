@@ -41,12 +41,14 @@
     dt.setData(SOURCE_ID, $(this).data(SOURCE_ID));
   },
 
-  _dropRemoveFacility = function ($floorImg, dataTransfer) {
+  _dropRemoveFacility = function ($floorImg, dataTransfer, showInList) {
     if (dataTransfer.effectAllowed === 'move') {
       $floorImg.smoothZoom('removeLandmark',
         [dataTransfer.getData(FACILITY_LANDMARK_ID_MIMETYPE)]);
-      $('#' + dataTransfer.getData(SOURCE_ID)).show()
-                                              .data('onMap', false);
+      if (showInList) {
+        $('#' + dataTransfer.getData(SOURCE_ID)).show()
+                                                .data('onMap', false);
+      }
     }
   },
 
@@ -55,12 +57,13 @@
       var origEvt = e.originalEvent,
           dt = e.originalEvent.dataTransfer;
 
-      if (dt.effectAllowed === 'move') _dropRemoveFacility($floorImg, dt);
+      if (dt.effectAllowed === 'move') _dropRemoveFacility($floorImg, dt, true);
     });
   },
 
   bindDropFacilityOnMap = function ($dropzone, $floorImg, landmarkTemplate) {
     $dropzone.on('drop', function (e) {
+      e.stopPropagation();
       var origEvt = e.originalEvent,
           dt = origEvt.dataTransfer,
           facilityName = dt.getData('text/plain'),
