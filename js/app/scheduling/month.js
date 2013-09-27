@@ -1,4 +1,45 @@
 +function ($, Handlebars, NAS) { 'use strict';
+  if (NAS.scheduling.month == undefined) {
+    NAS.scheduling.month = { };
+    
+    NAS.scheduling.month.bingNavEvent = function () {
+      $('.pagination.months .pages a').on('click', function () {
+        NAS.scheduling.month.nav($(this));
+      });
+      
+      $('.pagination.months .prev').on('click',  function() {
+        NAS.scheduling.month.nav($('.pagination.months a.active').prev('a:first'));
+      });
+      
+      $('.pagination.months .next').on('click',  function() {
+        NAS.scheduling.month.nav($('.pagination.months a.active').next('a:first'));
+      });
+    };
+    
+    NAS.scheduling.month.nav = function (el) {
+      if (el && el.length) {
+        $('.pagination.months .pages a.active').removeClass('active');
+        el.addClass('active');
+        var monthDate = new Date(el.attr('data-monthfrom'));
+        $('.header-title h2.set-title').text(
+          monthDate.getFullYear() + '\u5E74' + (monthDate.getMonth() + 1) + '\u6708'
+        );
+        monthDate.setDate(monthDate.getDate() - monthDate.getDay());
+        $('table.calendar.months .date').each(function (index) {
+          var title = (monthDate.getDate()) + '\u65e5';
+          if(index < 7){
+            title = '\u5468' + ('\u65e5\u4e00\u4e8c\u4e09\u56db\u4e94\u516d')
+                      .charAt(index) + ' ' + title;
+          }     
+          
+          $(this).find('.col-md-6.text-right').html(title);
+          
+          monthDate.setDate(monthDate.getDate() + 1);
+        });
+      }
+    };
+  }
+
   NAS.scheduling.MONTH_GRID_MAX_HEIGHT = '82px';
   var CALENDAR_TBL_SEL = 'table.calendar.months',
 
@@ -113,6 +154,8 @@
     NAS.scheduling.bindNewEvent({
       confirmHandler: confirmNewEvtHandler
     });
+    
+    NAS.scheduling.month.bingNavEvent();
 
     var $calTbl = $(CALENDAR_TBL_SEL);
     $calTbl.on('click', '.event li', syncActiveIndicator);

@@ -3,7 +3,8 @@
       $pin = $('<img>').attr('src', 'img/pin.png')
                        .attr('width', '50px')
                        .attr('height', '40px'),
-      landmarkId = 1,
+      landmarkId = 1, dronOnMap = false,
+      SOURCE_ID = 'text/x-nas-facility-landmark-source-id',
       FACILITY_LANDMARK_ID_MIMETYPE = 'text/x-nas-facility-landmark-id',
 
   bindSmoothZoom = function ($floorImg) {
@@ -23,26 +24,31 @@
   onFacilityDragStart = function (e) {
     var origEvt = e.originalEvent,
         dt = origEvt.dataTransfer;
-
+    dronOnMap = false;
     dt.setDragImage($pin[0], 25, 40);
     dt.setData('text/plain', $.trim($(this).text()));
     dt.effectAllowed = 'link';
+    dt.setData(SOURCE_ID, $(this).attr('id'));
   },
 
   onFacilityDragAgain = function (e) {
     var origEvt = e.originalEvent,
         dt = e.originalEvent.dataTransfer;
 
+    dronOnMap = false;
     dt.setDragImage($pin[0], 25, 40);
     dt.setData('text/plain', $(this).text());
     dt.setData(FACILITY_LANDMARK_ID_MIMETYPE, $(this).attr("id"));
     dt.effectAllowed = 'move';
+    dt.setData(SOURCE_ID, $(this).data(SOURCE_ID));
   },
 
   _dropRemoveFacility = function ($floorImg, dataTransfer) {
     if (dataTransfer.effectAllowed === 'move') {
       $floorImg.smoothZoom('removeLandmark',
         [dataTransfer.getData(FACILITY_LANDMARK_ID_MIMETYPE)]);
+      if(!dronOnMap)
+        $('#' + dataTransfer.getData(SOURCE_ID)).show();
     }
   },
 
@@ -69,8 +75,11 @@
           });
 
       if (dt.effectAllowed === 'move') _dropRemoveFacility($floorImg, dt);
+      dronOnMap = true;
       $floorImg.smoothZoom('addLandmark', [landmark]);
-      $('div#' + id).on('dragstart', onFacilityDragAgain);
+      $('div#' + id).on('dragstart', onFacilityDragAgain)
+        .data(SOURCE_ID, dt.getData(SOURCE_ID));
+      $('#' + dt.getData(SOURCE_ID)).hide();
     });
   };
 
