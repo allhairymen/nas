@@ -1,9 +1,8 @@
-+function ($) { 'use strict';
-  var Handlebars = this.Handlebars,
-      $pin = $('<img>').attr('src', 'img/pin.png')
++function ($, Handlebars) { 'use strict';
+  var $pin = $('<img>').attr('src', 'img/pin.png')
                        .attr('width', '50px')
                        .attr('height', '40px'),
-      landmarkId = 1, dronOnMap = false,
+      landmarkId = 1,
       SOURCE_ID = 'text/x-nas-facility-landmark-source-id',
       FACILITY_LANDMARK_ID_MIMETYPE = 'text/x-nas-facility-landmark-id',
 
@@ -24,7 +23,7 @@
   onFacilityDragStart = function (e) {
     var origEvt = e.originalEvent,
         dt = origEvt.dataTransfer;
-    dronOnMap = false;
+
     dt.setDragImage($pin[0], 25, 40);
     dt.setData('text/plain', $.trim($(this).text()));
     dt.effectAllowed = 'link';
@@ -35,7 +34,6 @@
     var origEvt = e.originalEvent,
         dt = e.originalEvent.dataTransfer;
 
-    dronOnMap = false;
     dt.setDragImage($pin[0], 25, 40);
     dt.setData('text/plain', $(this).text());
     dt.setData(FACILITY_LANDMARK_ID_MIMETYPE, $(this).attr("id"));
@@ -47,8 +45,8 @@
     if (dataTransfer.effectAllowed === 'move') {
       $floorImg.smoothZoom('removeLandmark',
         [dataTransfer.getData(FACILITY_LANDMARK_ID_MIMETYPE)]);
-      if(!dronOnMap)
-        $('#' + dataTransfer.getData(SOURCE_ID)).show();
+      $('#' + dataTransfer.getData(SOURCE_ID)).show()
+                                              .data('onMap', false);
     }
   },
 
@@ -75,25 +73,30 @@
           });
 
       if (dt.effectAllowed === 'move') _dropRemoveFacility($floorImg, dt);
-      dronOnMap = true;
       $floorImg.smoothZoom('addLandmark', [landmark]);
-      $('div#' + id).on('dragstart', onFacilityDragAgain)
-        .data(SOURCE_ID, dt.getData(SOURCE_ID));
-      $('#' + dt.getData(SOURCE_ID)).hide();
+      $('#' + id).on('dragstart', onFacilityDragAgain)
+                 .data(SOURCE_ID, dt.getData(SOURCE_ID));
+      $('#' + dt.getData(SOURCE_ID)).hide()
+                                    .data('onMap', true);
     });
   };
 
   $(document).ready(function () {
     var $floorImg = $('#floor-plan'),
         $dropzone = $('#zoom_container'),
+        $search = $('.search-container input.search-box'),
+        $roomsList = $('.nav-pane-container ul'),
         landmarkTemplate = Handlebars.compile($('#landmark-template').html());
 
     bindSmoothZoom($floorImg);
     bindDropFacilityOnMap($dropzone, $floorImg, landmarkTemplate);
     bindDropFacilityElsewhere($floorImg);
-    $('.nav-pane-container ul').on('dragstart', '[draggable=true]',
-      onFacilityDragStart);
+    $roomsList.on('dragstart', 'li[draggable=true]', onFacilityDragStart);
     $dropzone.on('dragover', false);
     $('body').on('dragover', false);
+    NAS.facilities.bindSearchOnKeypressed($search, $roomsList.find('li'), function ($item) {
+      var onMap = $item.data('onMap');
+      return typeof onMap === 'undefined' ? true : !onMap;
+    });
   });
-}.call(this, window.jQuery);
+}(window.jQuery, window.Handlebars);

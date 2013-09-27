@@ -14,4 +14,27 @@
     });
   };
 
+  NAS.facilities.bindSearchOnKeypressed = function ($searchInput, $toSearchItems, filterFunc) {
+    $searchInput.keyup(function (e) {
+      var searchStr = $searchInput.val();
+      if (searchStr) {
+        var $itemsMatched = $toSearchItems.filter(function () {
+          var $item = $(this),
+              itemTitle = $.trim($item.text()),
+              found = itemTitle.indexOf(searchStr) !== -1;
+          return filterFunc ? found && filterFunc($item) : found;
+        });
+        $itemsMatched.show();
+        $toSearchItems.not($itemsMatched).hide();
+      } else {
+        if (filterFunc) {
+          $toSearchItems = $toSearchItems.filter(function () {
+            return filterFunc($(this));
+          });
+        }
+        $toSearchItems.show();
+      }
+    });
+  };
+
 }(window.jQuery, window.NAS);

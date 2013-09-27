@@ -1,8 +1,5 @@
-+function ($) { 'use strict';
-  var Handlebars = this.Handlebars,
-      NAS = this.NAS,
-
-  _grabDragData = function (dataTransfer) {
++function ($, Handlebars, NAS) { 'use strict';
+  var _grabDragData = function (dataTransfer) {
     var jsonStr = dataTransfer.getData('text/plain');
     return JSON.parse(jsonStr);
   },
@@ -34,7 +31,8 @@
     var facilityTemplate = Handlebars.compile($('#facility-template').html()),
         $facilities = $('.js-facilities'),
         $hosts = $('.nav-pane-container ul'),
-        $opNav = $('ul.operation-nav');
+        $opNav = $('ul.operation-nav'),
+        $search = $('input.search-box');
 
     $opNav.on('click', 'a.js-edit-btn', function (e) {
       e.preventDefault();
@@ -126,5 +124,6 @@
       $(e.currentTarget).removeClass("active");
     });
     $facilities.on('click', 'ul li.new', false);
+    NAS.facilities.bindSearchOnKeypressed($search, $hosts.find('li'));
   });
-}.call(this, window.jQuery);
+}(window.jQuery, window.Handlebars, window.NAS);
