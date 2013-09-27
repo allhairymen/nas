@@ -1,7 +1,4 @@
-+function ($) { 'use strict';
-  var Handlebars = this.Handlebars,
-      NAS = this.NAS;
-
++function ($, Handlebars, NAS) { 'use strict';
   $(document).ready(function ($) {
     var $hosts = $('.hosts-management'),
         $opNav = $('ul.operation-nav'),
@@ -18,6 +15,7 @@
         if (name) {
           $editModal.one('hidden.bs.modal', function (e) {
             $target.before(hostTemplate({name: name}));
+            NAS.facilities.updateFacilityAmount($('.facilities-item'));
           });
           $input.val('');
         }
@@ -59,6 +57,7 @@
       $deleteModal.one('click', '.js-confirm-btn', function (e) {
         $deleteModal.one('hidden.bs.modal', function (e) {
           $toDeleteHosts.remove();
+          NAS.facilities.updateFacilityAmount($('.facilities-item'));
         });
         $deleteModal.modal('hide');
       });
@@ -67,4 +66,4 @@
 
     $hosts.on('change', ':checkbox', NAS.facilities.onFacilityChecked);
   });
-}.call(this, window.jQuery);
+}(window.jQuery, window.Handlebars, window.NAS);
