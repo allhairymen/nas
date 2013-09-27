@@ -12,7 +12,6 @@
   <script src="js/vendor/bootstrap.js"></script>
   <script src="js/vendor/handlebars.js"></script>
   <script src="js/app/universal.js"></script>
-  <script src="js/app/facilities/general.js"></script>
   <script src="js/app/facilities/floor_plan.js"></script>
 </head>
 
@@ -92,13 +91,22 @@
         <table>
           <tr>
             <td valign="top" height="100%">
-              <div class="right-column-content-main">
-                <div id="zoom_container" class="floor-plan">
-                  <img id="floor-plan" src="img/floor_plan_1.jpg" width="850px" height="515px" />
-                  <div class="landmarks" data-show-at-zoom="100" data-allow-drag="false">
+              <form action="floor_plan.html" method="post">
+                <div class="right-column-content-main">
+                  添加楼层建筑平面结构图代替病区图配置各个病区节点。
+                  <div class="file-upload">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label>
+                          <input name="floor_img" type="file">
+                        </label>
+                        <div class="tips">大小限制：4MB</div>
+                      </div>
+                    </div>
                   </div>
-                </div>  
-              </div>
+                  <input type="submit" class="btn btn-green" value="确定">
+                </div>
+              </form>
             </td>
           </tr>
           <tr>
@@ -123,16 +131,10 @@
   </ul>
   <div class="clearfix"></div>
 </div>
-
-<script id="landmark-template" type="text/x-handlebars-template">
-<div id="{{ id }}" class="item mark" data-position="{{ posX }},{{ posY }}" data-show-at-zoom="0" draggable="true">
-  <div>
-    <div class="text">
-      <strong>{{ name }}</strong>
-    </div>
-    <img draggable="false" src="img/pin.png" width="50px" height="40px" alt="{{ name }}" />    
-  </div>    
-</div>        
+<script>
+  $('button.btn-green').click(function (e) {
+    window.location.replace('floor_plan.html');
+  });
 </script>
 </body>
 </html>

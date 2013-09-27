@@ -17,348 +17,360 @@
     <div class="logo">
       <h1><a href="history.html"><i class="icon icon-3"></i><span class="title">历史记录</span></a><span class="seperator"><i></i></span><a href="#" class="caret js-show-nav"><i></i></a></h1>
     </div>
-  <div class="user">
-    <a href="profile.html"><span class="user-name">Admin</span><span class="user-avatar"><img src="img/default_avatar_s.png" alt=""></span></a>
+    <div class="user">
+      <a data-toggle="dropdown" href="profile.html"><span class="user-name">Admin</span><span class="user-avatar"><img src="img/default_avatar_s.png" alt=""></span></a>
+      <div class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        <div class="avatar"><img src="img/default_avatar_m.png" alt=""></div>
+        <ul>
+          <li><a href="profile.html">编辑个人资料</a></li>
+          <li><a href="#">注销</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
-</div>
-<div class="base">
-  <div class="full-column history-management">
-    <div class="column-header">
-      <div class="header-title">
-        <h2 class="set-title">外科</h2>
+  <div class="base">
+    <div class="full-column history-management">
+      <div class="column-header">
+        <div class="header-title">
+          <h2 class="set-title">外科</h2>
+        </div>
       </div>
-    </div>
-    <div class="left-column-content">
-      <div class="fill-content">
-        <table>
-          <tr>
-            <td valign="top" height="100%">
-              <table class="calendar-full">
-                <tr>
-                  <td colspan="7" class="calendar-header">2013年8月</td>
-                </tr>
-                <tr>
-                  <td>日</td>
-                  <td>一</td>
-                  <td>二</td>
-                  <td>三</td>
-                  <td>四</td>
-                  <td>五</td>
-                  <td>六</td>
-                </tr>
-                <tr>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td><div class="day">1</div></td>
-                  <td><div class="day">2</div></td>
-                  <td><div class="day">3</div></td>
-                </tr>
-                <tr>
-                  <td><div class="day">4</div></td>
-                  <td><div class="day">5</div></td>
-                  <td><div class="day">6</div></td>
-                  <td><div class="day">7</div></td>
-                  <td><div class="day">8</div></td>
-                  <td><div class="day">9</div></td>
-                  <td><div class="day">10</div></td>
-                </tr>
-                <tr>
-                  <td><div class="day">11</div></td>
-                  <td><div class="day">12</div></td>
-                  <td><div class="day">13</div></td>
-                  <td><div class="day">14</div></td>
-                  <td><div class="day today">15</div></td>
-                  <td><div class="day">16</div></td>
-                  <td><div class="day">17</div></td>
-                </tr>
-                <tr>
-                  <td><div class="day">18</div></td>
-                  <td><div class="day">19</div></td>
-                  <td><div class="day">20</div></td>
-                  <td><div class="day">21</div></td>
-                  <td><div class="day">22</div></td>
-                  <td><div class="day">23</div></td>
-                  <td><div class="day">24</div></td>
-                </tr>
-                <tr>
-                  <td><div class="day">25</div></td>
-                  <td><div class="day">26</div></td>
-                  <td><div class="day">27</div></td>
-                  <td><div class="day">28</div></td>
-                  <td><div class="day">29</div></td>
-                  <td><div class="day">30</div></td>
-                  <td><div class="day">31</div></td>
-                </tr>
-              </table>
-            </td>
+      <div class="left-column-content">
+        <div class="fill-content">
+          <table>
             <tr>
-            <td valign="bottom">
-              <div class="search-history">
-                <ul>
-                  <li>
-                    <div class="row">
-                      <div class="col-xs-6 col-sm-6 col-md-6">
-                        <label>从&nbsp;<select><option></option></select></label>
-                      </div>
-                      <div class="col-xs-6 col-sm-6 col-md-6">
-                        <label>到&nbsp;<select><option></option></select></label>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="row">
-                      <div class="col-xs-3 col-sm-3 col-md-3">
-                        <label>病区</label>
-                      </div>
-                      <div class="col-xs-9 col-sm-9 col-md-9">
-                        <select><option></option></select>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="row">
-                      <div class="col-xs-3 col-sm-3 col-md-3">
-                        <label>护士站</label>
-                      </div>
-                      <div class="col-xs-9 col-sm-9 col-md-9">
-                        <select><option></option></select>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="row">
-                      <div class="col-xs-3 col-sm-3 col-md-3">
-                        <label>呼叫源</label>
-                      </div>
-                      <div class="col-xs-9 col-sm-9 col-md-9">
-                        <select><option></option></select>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="row">
-                      <div class="col-xs-3 col-sm-3 col-md-3">
-                        <label>护士编号</label>
-                      </div>
-                      <div class="col-xs-9 col-sm-9 col-md-9">
-                        <select><option></option></select>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="row">
-                      <div class="col-xs-3 col-sm-3 col-md-3">
-                        <label>护士编号</label>
-                      </div>
-                      <div class="col-xs-9 col-sm-9 col-md-9">
-                        <select><option></option></select>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <button class="btn btn-default">搜索</button>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-    <div class="right-column-content">
-      <div class="fill-content">
-        <table>
-          <tr>
-            <td valign="top" height="100%">
-              <div class="right-column-content-main">
-                <div class="history-result">
+              <td valign="top" height="100%">
+                <table class="calendar-full">
+                  <tr>
+                    <td colspan="7" class="calendar-header">2013年8月</td>
+                  </tr>
+                  <tr>
+                    <td>日</td>
+                    <td>一</td>
+                    <td>二</td>
+                    <td>三</td>
+                    <td>四</td>
+                    <td>五</td>
+                    <td>六</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td><div class="day">1</div></td>
+                    <td><div class="day">2</div></td>
+                    <td><div class="day">3</div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="day">4</div></td>
+                    <td><div class="day">5</div></td>
+                    <td><div class="day">6</div></td>
+                    <td><div class="day">7</div></td>
+                    <td><div class="day">8</div></td>
+                    <td><div class="day">9</div></td>
+                    <td><div class="day">10</div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="day">11</div></td>
+                    <td><div class="day">12</div></td>
+                    <td><div class="day">13</div></td>
+                    <td><div class="day">14</div></td>
+                    <td><div class="day today">15</div></td>
+                    <td><div class="day">16</div></td>
+                    <td><div class="day">17</div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="day">18</div></td>
+                    <td><div class="day">19</div></td>
+                    <td><div class="day">20</div></td>
+                    <td><div class="day">21</div></td>
+                    <td><div class="day">22</div></td>
+                    <td><div class="day">23</div></td>
+                    <td><div class="day">24</div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="day">25</div></td>
+                    <td><div class="day">26</div></td>
+                    <td><div class="day">27</div></td>
+                    <td><div class="day">28</div></td>
+                    <td><div class="day">29</div></td>
+                    <td><div class="day">30</div></td>
+                    <td><div class="day">31</div></td>
+                  </tr>
+                </table>
+              </td>
+              <tr>
+              <td valign="bottom">
+                <div class="search-history">
                   <ul>
                     <li>
-                      <div class="row row-header">
-                        <div class="col-xs-2 col-sm-2 col-md-2">日期</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">病区</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">病历号</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">呼叫源</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">呼叫类型</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">呼叫时间</div>
-                      </div>
-                    </li>
-                    <li>
-                      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1"></a>
-                      <div class="row record">
-                        <div class="col-xs-2 col-sm-2 col-md-2">2013-08-14</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">外科</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">001</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">001</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">紧急</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">00:25</div>
-                      </div>
-                      <div id="collapse1" class="panel-collapse collapse">
-                        <div class="row">
-                          <div class="col-xs-2 col-sm-2 col-md-2">病人信息</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">病人姓名：詹姆斯</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">住院编号：00021</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">呼出时间：00:25</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">备注：青霉素过敏</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                      <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                          <label>从&nbsp;<select><option>08-15</option></select></label>
                         </div>
-                        <div class="row">
-                          <div class="col-xs-2 col-sm-2 col-md-2">护士信息</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">护士姓名：海伦</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">工号：00586</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">响应时间：12:25</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">结束时间：12:25</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">护理内容：换药</div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                          <label>到&nbsp;<select><option>08-16</option></select></label>
                         </div>
                       </div>
                     </li>
                     <li>
-                      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2"></a>
-                      <div class="row record">
-                        <div class="col-xs-2 col-sm-2 col-md-2">2013-08-14</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">外科</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">001</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">001</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">紧急</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">00:25</div>
-                      </div>
-                      <div id="collapse2" class="panel-collapse collapse">
-                        <div class="row">
-                          <div class="col-xs-2 col-sm-2 col-md-2">病人信息</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">病人姓名：詹姆斯</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">住院编号：00021</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">呼出时间：00:25</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">备注：青霉素过敏</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                      <div class="row">
+                        <div class="col-xs-3 col-sm-3 col-md-3">
+                          <label>病区</label>
                         </div>
-                        <div class="row">
-                          <div class="col-xs-2 col-sm-2 col-md-2">护士信息</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">护士姓名：海伦</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">工号：00586</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">响应时间：12:25</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">结束时间：12:25</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">护理内容：换药</div>
+                        <div class="col-xs-9 col-sm-9 col-md-9">
+                          <select><option>病区 1</option></select>
                         </div>
                       </div>
                     </li>
                     <li>
-                      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3"></a>
-                      <div class="row record">
-                        <div class="col-xs-2 col-sm-2 col-md-2">2013-08-14</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">外科</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">001</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">001</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">紧急</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">00:25</div>
-                      </div>
-                      <div id="collapse3" class="panel-collapse collapse">
-                        <div class="row">
-                          <div class="col-xs-2 col-sm-2 col-md-2">病人信息</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">病人姓名：詹姆斯</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">住院编号：00021</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">呼出时间：00:25</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">备注：青霉素过敏</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                      <div class="row">
+                        <div class="col-xs-3 col-sm-3 col-md-3">
+                          <label>护士站</label>
                         </div>
-                        <div class="row">
-                          <div class="col-xs-2 col-sm-2 col-md-2">护士信息</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">护士姓名：海伦</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">工号：00586</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">响应时间：12:25</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">结束时间：12:25</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">护理内容：换药</div>
+                        <div class="col-xs-9 col-sm-9 col-md-9">
+                          <select><option>护士站 1</option></select>
                         </div>
                       </div>
                     </li>
                     <li>
-                      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4"></a>
-                      <div class="row record">
-                        <div class="col-xs-2 col-sm-2 col-md-2">2013-08-14</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">外科</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">001</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">001</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">紧急</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">00:25</div>
-                      </div>
-                      <div id="collapse4" class="panel-collapse collapse">
-                        <div class="row">
-                          <div class="col-xs-2 col-sm-2 col-md-2">病人信息</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">病人姓名：詹姆斯</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">住院编号：00021</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">呼出时间：00:25</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">备注：青霉素过敏</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                      <div class="row">
+                        <div class="col-xs-3 col-sm-3 col-md-3">
+                          <label>呼叫源</label>
                         </div>
-                        <div class="row">
-                          <div class="col-xs-2 col-sm-2 col-md-2">护士信息</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">护士姓名：海伦</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">工号：00586</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">响应时间：12:25</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">结束时间：12:25</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">护理内容：换药</div>
+                        <div class="col-xs-9 col-sm-9 col-md-9">
+                          <select>
+                            <option>普通</option>
+                            <option>卫浴</option>
+                            <option>医生</option>
+                            <option>复位</option>
+                          </select>
                         </div>
                       </div>
                     </li>
                     <li>
-                      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse5"></a>
-                      <div class="row record">
-                        <div class="col-xs-2 col-sm-2 col-md-2">2013-08-14</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">外科</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">001</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">001</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">紧急</div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">00:25</div>
-                      </div>
-                      <div id="collapse5" class="panel-collapse collapse">
-                        <div class="row">
-                          <div class="col-xs-2 col-sm-2 col-md-2">病人信息</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">病人姓名：詹姆斯</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">住院编号：00021</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">呼出时间：00:25</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">备注：青霉素过敏</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                      <div class="row">
+                        <div class="col-xs-3 col-sm-3 col-md-3">
+                          <label>护士编号</label>
                         </div>
-                        <div class="row">
-                          <div class="col-xs-2 col-sm-2 col-md-2">护士信息</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">护士姓名：海伦</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">工号：00586</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">响应时间：12:25</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">结束时间：12:25</div>
-                          <div class="col-xs-2 col-sm-2 col-md-2">护理内容：换药</div>
+                        <div class="col-xs-9 col-sm-9 col-md-9">
+                          <select><option>001</option></select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row">
+                        <div class="col-xs-3 col-sm-3 col-md-3">
+                          <label>护士编号</label>
+                        </div>
+                        <div class="col-xs-9 col-sm-9 col-md-9">
+                          <select><option>001</option></select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <button class="btn btn-default">搜索</button>
                         </div>
                       </div>
                     </li>
                   </ul>
                 </div>
-              </div>
-            </td>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="right-column-content">
+        <div class="fill-content">
+          <table>
             <tr>
-            <td valign="bottom">
-              <div class="footer">
-                <div class="copyright">&copy;2013 Televic</div>
-              </div>
-            </td>
-          </tr>
-        </table>
+              <td valign="top" height="100%">
+                <div class="right-column-content-main">
+                  <div class="history-result">
+                    <ul>
+                      <li>
+                        <div class="row row-header">
+                          <div class="col-xs-2 col-sm-2 col-md-2">日期</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">病区</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">病历号</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">呼叫源</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">呼叫类型</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">呼叫时间</div>
+                        </div>
+                      </li>
+                      <li>
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1"></a>
+                        <div class="row record">
+                          <div class="col-xs-2 col-sm-2 col-md-2">2013-08-14</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">外科</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">001</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">001</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">紧急</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">00:25</div>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse">
+                          <div class="row">
+                            <div class="col-xs-2 col-sm-2 col-md-2">病人信息</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">病人姓名：詹姆斯</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">住院编号：00021</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">呼出时间：00:25</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">备注：青霉素过敏</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-2 col-sm-2 col-md-2">护士信息</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">护士姓名：海伦</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">工号：00586</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">响应时间：12:25</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">结束时间：12:25</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">护理内容：换药</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2"></a>
+                        <div class="row record">
+                          <div class="col-xs-2 col-sm-2 col-md-2">2013-08-14</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">外科</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">001</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">001</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">紧急</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">00:25</div>
+                        </div>
+                        <div id="collapse2" class="panel-collapse collapse">
+                          <div class="row">
+                            <div class="col-xs-2 col-sm-2 col-md-2">病人信息</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">病人姓名：詹姆斯</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">住院编号：00021</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">呼出时间：00:25</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">备注：青霉素过敏</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-2 col-sm-2 col-md-2">护士信息</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">护士姓名：海伦</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">工号：00586</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">响应时间：12:25</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">结束时间：12:25</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">护理内容：换药</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3"></a>
+                        <div class="row record">
+                          <div class="col-xs-2 col-sm-2 col-md-2">2013-08-14</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">外科</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">001</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">001</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">紧急</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">00:25</div>
+                        </div>
+                        <div id="collapse3" class="panel-collapse collapse">
+                          <div class="row">
+                            <div class="col-xs-2 col-sm-2 col-md-2">病人信息</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">病人姓名：詹姆斯</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">住院编号：00021</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">呼出时间：00:25</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">备注：青霉素过敏</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-2 col-sm-2 col-md-2">护士信息</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">护士姓名：海伦</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">工号：00586</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">响应时间：12:25</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">结束时间：12:25</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">护理内容：换药</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4"></a>
+                        <div class="row record">
+                          <div class="col-xs-2 col-sm-2 col-md-2">2013-08-14</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">外科</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">001</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">001</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">紧急</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">00:25</div>
+                        </div>
+                        <div id="collapse4" class="panel-collapse collapse">
+                          <div class="row">
+                            <div class="col-xs-2 col-sm-2 col-md-2">病人信息</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">病人姓名：詹姆斯</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">住院编号：00021</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">呼出时间：00:25</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">备注：青霉素过敏</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-2 col-sm-2 col-md-2">护士信息</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">护士姓名：海伦</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">工号：00586</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">响应时间：12:25</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">结束时间：12:25</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">护理内容：换药</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse5"></a>
+                        <div class="row record">
+                          <div class="col-xs-2 col-sm-2 col-md-2">2013-08-14</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">外科</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">001</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">001</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">紧急</div>
+                          <div class="col-xs-2 col-sm-2 col-md-2">00:25</div>
+                        </div>
+                        <div id="collapse5" class="panel-collapse collapse">
+                          <div class="row">
+                            <div class="col-xs-2 col-sm-2 col-md-2">病人信息</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">病人姓名：詹姆斯</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">住院编号：00021</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">呼出时间：00:25</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">备注：青霉素过敏</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-2 col-sm-2 col-md-2">护士信息</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">护士姓名：海伦</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">工号：00586</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">响应时间：12:25</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">结束时间：12:25</div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">护理内容：换药</div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </td>
+              <tr>
+              <td valign="bottom">
+                <div class="footer">
+                  <div class="copyright">&copy;2013 Televic</div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<div class="header-bar">
-  <ul>
-    <li><a href="hosts.html"><span class="icon icon-1"></span> <span>设备管理</span></a></li>
-    <li><a href="scheduling_month.html"><span class="icon icon-2"></span> <span>护士排班</span></a></li>
-    <li><a href="history.html"><span class="icon icon-3"></span> <span>历史记录</span></a></li>
-    <li><a href="people_management.html"><span class="icon icon-4"></span> <span>人员管理</span></a></li>
-  </ul>
-  <div class="clearfix"></div>
-</div>
+  
+  <div class="header-bar">
+    <ul>
+      <li><a href="hosts.html"><span class="icon icon-1"></span> <span>设备管理</span></a></li>
+      <li><a href="scheduling_month.html"><span class="icon icon-2"></span> <span>护士排班</span></a></li>
+      <li><a href="history.html"><span class="icon icon-3"></span> <span>历史记录</span></a></li>
+      <li><a href="people_management.html"><span class="icon icon-4"></span> <span>人员管理</span></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </div>
 </body>
 </html>

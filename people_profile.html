@@ -17,7 +17,14 @@
     <h1><a href="people_management.html"><i class="icon icon-4"></i><span class="title">人员管理</span></a><span class="seperator"><i></i></span><a href="#" class="caret js-show-nav"><i></i></a></h1>
   </div>
   <div class="user">
-    <a href="profile.html"><span class="user-name">Admin</span><span class="user-avatar"><img src="img/default_avatar_s.png" alt=""></span></a>
+    <a data-toggle="dropdown" href="profile.html"><span class="user-name">Admin</span><span class="user-avatar"><img src="img/default_avatar_s.png" alt=""></span></a>
+    <div class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+      <div class="avatar"><img src="img/default_avatar_m.png" alt=""></div>
+      <ul>
+        <li><a href="profile.html">编辑个人资料</a></li>
+        <li><a href="#">注销</a></li>
+      </ul>
+    </div>
   </div>
 </div>
 <div class="base">
@@ -31,6 +38,17 @@
             <li><label>工号<br><input name="" type="text"></label></li>
             <li><label>护士组<br><select><option>请选择一项</option></select></label></li>
             <li><label>职位<br><select><option>请选择一项</option></select></label></li>
+            <li>
+              <label>权限选择</label>
+              <div class="row">
+                <div class="col-sm-2"><label><input type="checkbox" value=""> &nbsp; 设备管理</label></div>
+                <div class="col-sm-2"><label><input type="checkbox" value=""> &nbsp; 护士排班</label></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-2"><label><input type="checkbox" value=""> &nbsp; 历史记录</label></div>
+                <div class="col-sm-2"><label><input type="checkbox" value=""> &nbsp; 人员管理</label></div>
+              </div>
+            </li>
             <li><label>手机号<br><input name="" type="text"></label></li>
             <li><label>身份识别卡号<br><input name="" type="text"></label></li>
           </ul>
