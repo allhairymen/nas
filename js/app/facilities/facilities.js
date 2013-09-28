@@ -84,8 +84,8 @@
                 });
             $dropzone.before(facility);
             $dropzone.removeClass('active');
-            $src.find('span.facility-name-ip').text(facilityName);
-            $src.attr('draggable', 'false');
+            $src.hide()
+                .data('set', true);
             NAS.facilities.updateFacilityAmount($facilityItems);
           });
         }
@@ -105,8 +105,8 @@
                 $bindHost = $($el.attr('data-bind-host')),
                 facilityName = $.trim($el.find('span.facility-name').text()),
                 ip = $.trim($el.find('span.ip').text());
-            $bindHost.find('span.facility-name-ip').html(ip);
-            $bindHost.attr('draggable', 'true');
+            $bindHost.show()
+                     .data('set', false);
           });
           $toDeleteFacilities.remove();
           NAS.facilities.updateFacilityAmount($('.facilities-item'));
@@ -124,6 +124,9 @@
       $(e.currentTarget).removeClass("active");
     });
     $facilities.on('click', 'ul li.new', false);
-    NAS.facilities.bindSearchOnKeypressed($search, $hosts.find('li'));
+    NAS.facilities.bindSearchOnKeypressed($search, $hosts.find('li'), function ($host) {
+      var set = $host.data('set');
+      return typeof set === 'undefined' ? true : !set;
+    });
   });
 }(window.jQuery, window.Handlebars, window.NAS);
