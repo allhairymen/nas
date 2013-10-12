@@ -1,7 +1,8 @@
 +function ($, Handlebars, NAS) { 'use strict';
-  var _grabDragData = function (dataTransfer) {
-    var jsonStr = dataTransfer.getData('text/plain');
-    return JSON.parse(jsonStr);
+  var nowDraggingItemData = '',
+
+  _grabDragData = function (dataTransfer) {
+    return JSON.parse(nowDraggingItemData);
   },
 
   onFacilityDragstart = function (e) {
@@ -10,11 +11,11 @@
         typeClass = $target.parent('ul').attr('data-type-class');
 
     dt.effectAllowed = 'move';
-    dt.setData('text/plain', JSON.stringify({
+    nowDraggingItemData = JSON.stringify({
       type_class: typeClass,
       ip: $.trim($target.text()),
       srcId: $target.attr('id')
-    }));
+    });
   },
 
   onDragFacilityOverDropzone = function (e) {
