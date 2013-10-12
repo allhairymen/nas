@@ -1,6 +1,4 @@
-+function () { 'use strict';
-  var Handlebars = this.Handlebars;
-
++function ($, Handlebars) { 'use strict';
   $(document).ready(function (e) {
     var $people = $('.people-stats'),
         $deleteModal = $('#myModal_1'),
@@ -28,6 +26,7 @@
       $delPanel.on('click', 'button.js-confirm-btn', function (e) {
         $target.popover('hide');
         $facilityRow.remove();
+        $(document).trigger('sync.nas.actionbar', [$people, selectedNum]);
       });
     });
 
@@ -40,10 +39,19 @@
       $deleteModal.one('click', 'button.js-confirm-btn', function (e) {
         $deleteModal.one('hidden.bs.modal', function (e) {
           $toDeleteFacilities.remove();
+          $(document).trigger('sync.nas.actionbar', [$people, selectedNum]);
         });
         $deleteModal.modal('hide');
       });
       $deleteModal.modal('show');
     });
+
+    function selectedNum () {
+      return $people.find(':checkbox:checked').length;
+    }
+    $people.on('change', ':checkbox', function (e) {
+      $(document).trigger('sync.nas.actionbar', [$people, selectedNum]);
+    });
+    $(document).on('sync.nas.actionbar', NAS.utils.syncActionbar);
   });
-}.call(this, window.jQuery);
+}(jQuery, Handlebars);

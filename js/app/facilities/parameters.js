@@ -27,6 +27,7 @@
       $delPanel.on('click', 'button.js-confirm-btn', function (e) {
         $target.popover('hide');
         $facilityRow.remove();
+        $(document).trigger('sync.nas.actionbar', [$mainFacilities, selectedNum]);
       });
     });
 
@@ -40,10 +41,19 @@
       $modal.one('click', 'button.js-confirm-btn', function (e) {
         $modal.one('hidden.bs.modal', function (e) {
           $toDeleteFacilities.remove();
+          $(document).trigger('sync.nas.actionbar', [$mainFacilities, selectedNum]);
         });
         $modal.modal('hide');
       });
       $modal.modal('show');
     });
+
+    function selectedNum () {
+      return $mainFacilities.find(':checkbox:checked').length;
+    }
+    $mainFacilities.on('change', ':checkbox', function (e) {
+      $(document).trigger('sync.nas.actionbar', [$mainFacilities, selectedNum]);
+    });
+    $(document).on('sync.nas.actionbar', NAS.utils.syncActionbar);
   });
 }.call(this, window.jQuery);

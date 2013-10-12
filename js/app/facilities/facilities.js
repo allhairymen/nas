@@ -110,6 +110,7 @@
           });
           $toDeleteFacilities.remove();
           NAS.facilities.updateFacilityAmount($('.facilities-item'));
+          $(document).trigger('sync.nas.actionbar', [$facilities]);
         });
         $modal.modal('hide');
       });
@@ -119,7 +120,11 @@
 
     $hosts.on('dragstart', 'li[draggable=true]', onFacilityDragstart);
     $facilities.on('dragover', 'ul li.new', onDragFacilityOverDropzone);
-    $facilities.on('change', ':checkbox', NAS.facilities.onFacilityChecked);
+    $facilities.on('change', ':checkbox', function (e) {
+      NAS.facilities.onFacilityChecked(e);
+      $(document).trigger('sync.nas.actionbar', [$facilities]);
+    });
+    $(document).on('sync.nas.actionbar', NAS.utils.syncActionbar);
     $facilities.on('dragleave', 'ul li.new', function (e) {
       $(e.currentTarget).removeClass("active");
     });

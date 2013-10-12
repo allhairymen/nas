@@ -58,12 +58,17 @@
         $deleteModal.one('hidden.bs.modal', function (e) {
           $toDeleteHosts.remove();
           NAS.facilities.updateFacilityAmount($('.facilities-item'));
+          $(document).trigger('sync.nas.actionbar', [$hosts]);
         });
         $deleteModal.modal('hide');
       });
       $deleteModal.modal('show');
     });
 
-    $hosts.on('change', ':checkbox', NAS.facilities.onFacilityChecked);
+    $hosts.on('change', ':checkbox', function (e) {
+      NAS.facilities.onFacilityChecked(e);
+      $(document).trigger('sync.nas.actionbar', [$hosts]);
+    });
+    $(document).on('sync.nas.actionbar', NAS.utils.syncActionbar);
   });
-}(window.jQuery, window.Handlebars, window.NAS);
+}(jQuery, Handlebars, NAS);

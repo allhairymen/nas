@@ -59,12 +59,17 @@
       $deleteModal.one('click', '.js-confirm-btn', function (e) {
         $deleteModal.one('hidden.bs.modal', function (e) {
           $toDeletePeople.remove();
+          $(document).trigger('sync.nas.actionbar', [$people]);
         });
         $deleteModal.modal('hide');
       });
       $deleteModal.modal('show');
     });
 
-    $people.on('change', ':checkbox', NAS.facilities.onFacilityChecked);
+    $people.on('change', ':checkbox', function (e) {
+      NAS.facilities.onFacilityChecked(e);
+      $(document).trigger('sync.nas.actionbar', [$people]);
+    });
+    $(document).on('sync.nas.actionbar', NAS.utils.syncActionbar);
   });
 }.call(this, window.jQuery);

@@ -65,11 +65,29 @@
 
       $body[bindMethod](evtNamespace, handler);
     };
+
+    NAS.utils.syncActionbar = function (e, $entries, $activeFunc) {
+      var $actionBar = $('ul.operation-nav'),
+          $editBtn = $actionBar.find('a.js-edit-btn'),
+          $deleteBtn = $actionBar.find('a.js-delete-btn'),
+          activeNum = $activeFunc ? $activeFunc() : $entries.find('li.active').length;
+      e.stopPropagation();
+      if (activeNum > 1) {
+        $editBtn.hide();
+        $deleteBtn.show();
+      } else if (activeNum > 0) {
+        $editBtn.show();
+        $deleteBtn.show();
+      } else {
+        $editBtn.hide();
+        $deleteBtn.hide();
+      }
+    };
   }
-}(window.jQuery);
+}(jQuery);
 
 +function ($, NAS) {
   $(document).ready(function () {
     NAS.universal.bindNavBar();
   });
-}(window.jQuery, window.NAS);
+}(jQuery, NAS);

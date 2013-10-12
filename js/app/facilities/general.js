@@ -1,7 +1,8 @@
 +function ($, NAS) { 'use strict';
   NAS.facilities.onFacilityChecked = function (e) {
     e.stopPropagation();
-    $(this).parent('li').toggleClass('active', $(this).prop('checked'));
+    $(e.currentTarget).parent('li')
+                      .toggleClass('active', $(this).prop('checked'));
   };
 
   NAS.facilities.updateFacilityAmount = function ($facilityItems) {
@@ -37,4 +38,4 @@
     });
   };
 
-}(window.jQuery, window.NAS);
+}(jQuery, NAS);
